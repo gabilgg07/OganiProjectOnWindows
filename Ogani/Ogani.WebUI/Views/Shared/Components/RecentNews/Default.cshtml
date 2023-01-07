@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Blog>
+
+@if (Model != null)
+{
+    <div class="blog-sidebar-item">
+        <h4>Recent News</h4>
+        <div class="blog-sidebar-recent">
+            @foreach (var item in Model)
+            {
+                <a asp-controller="blog" asp-action="details" asp-route-id="@item.Id" class="blog-sidebar-recent-item">
+                    <div class="blog-sidebar-recent-item-pic">
+                        <img src="~/uploads/images/blogs/@item.ImagePath" alt="@item.Title">
+                    </div>
+                    <div class="blog-sidebar-recent-item-text">
+                        <h6>@item.Title</h6>
+                        <span>@item.PublishedDate?.ToString("MMM dd, yyyy")</span>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+}

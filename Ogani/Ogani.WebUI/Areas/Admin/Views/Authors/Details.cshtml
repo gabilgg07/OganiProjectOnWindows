@@ -1,0 +1,69 @@
+@model Ogani.WebUI.Models.Entity.Author
+
+@{
+    ViewData["Title"] = "Authors Details";
+}
+
+<ul class="breadcrumb">
+    <li>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
+    </li>
+    <li>
+        <p><a asp-action="index">Authors</a></p>
+    </li>
+    <li><a class="active">Details</a> </li>
+</ul>
+<div class="page-title">
+    <a asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
+    <h3>Admin - Authors</h3>
+</div>
+
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="grid simple ">
+            <div class="grid-body ">
+                <form method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="FullName" class="control-label"></label>
+                        <p class="form-control">
+                            @Model.FullName
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Role" class="control-label"></label>
+                        <p class="form-control">
+                            @Model.Role
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <image asp-caption="Author Image"
+                               asp-for="Image"
+                               asp-path="/uploads/images/authors/@Model.ImagePath"
+                               readonly />
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-warning" asp-action="edit" asp-route-id="@Model.Id">Edit</a>
+                        <a class="btn btn-info" asp-action="index">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section addcss {
+    <link rel="stylesheet" href="~/lib/jquery-image-input/image-input.css" />
+}
+
+
+@section addjs {
+
+    <script src="~/lib/jquery-image-input/jquery.image-input.js"></script>
+    <script src="~/lib/ckeditor5/ckeditor.js"></script>
+}
+

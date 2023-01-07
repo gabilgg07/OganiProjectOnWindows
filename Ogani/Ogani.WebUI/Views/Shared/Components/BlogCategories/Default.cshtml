@@ -1,0 +1,15 @@
+﻿@model IEnumerable<BlogCategory>
+
+
+@if (Model != null)
+{
+    <div class="blog-sidebar-item">
+        <h4>Categories</h4>
+        <ul>
+            @foreach (var c in Model)
+            {
+                <li><a asp-controller="blog" asp-action="index" asp-route-categoryId="@c.Id">@c.Name</a></li>
+            }
+        </ul>
+    </div>
+}

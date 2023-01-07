@@ -1,0 +1,10 @@
+﻿@{
+    string title = ViewBag.Title??"";
+}
+<ul>
+    <li class="@(title.ToUpper().Contains("HOME")?"active":"")"><a asp-controller="home" asp-action="index">@LayoutResource.Home</a></li>
+    <li class="@(title.ToUpper().Contains("SHOP")?"active":"")"><a asp-controller="Shop" asp-action="index">@LayoutResource.Shop</a></li>
+    <li class="@(title.ToUpper().Contains("BLOG")?"active":"")"><a asp-controller="blog" asp-action="index">@LayoutResource.Blog</a></li>
+    <li class="@(title.ToUpper().Contains("CONTACT")?"active":"")"><a asp-controller="home" asp-action="contact">@LayoutResource.Contact</a></li>
+</ul>
+

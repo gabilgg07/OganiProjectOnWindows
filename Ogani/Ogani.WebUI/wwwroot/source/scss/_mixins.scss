@@ -1,0 +1,54 @@
+// Responsivity
+
+// max-width
+@mixin mq-max-480() {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin mq-max-575() {
+  @media screen and (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin mq-max-767() {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mq-max-991() {
+  @media screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin mq-max-1199() {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+// min-max-width
+@mixin mq-480-575() {
+  @media screen and (min-width: 480px) and (max-width: 575px) {
+    @content;
+  }
+}
+@mixin mq-576-767() {
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin mq-768-991() {
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+@mixin mq-992-1199() {
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}

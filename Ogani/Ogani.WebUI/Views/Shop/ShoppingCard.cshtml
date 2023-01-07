@@ -1,0 +1,263 @@
+﻿@model IEnumerable<BasketItem>
+@{
+    ViewBag.Title = "Shopping Card";
+}
+@section addcss{
+    <style>
+        .shoping-cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+}
+
+<section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Shopping Cart</h2>
+                    <div class="breadcrumb-option">
+                        <a asp-controller="home" asp-action="index">Home</a>
+                        <span>Shopping Cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="shoping-cart spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shoping-cart-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="shoping-product">Products</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                @foreach (var item in Model)
+                                {
+                                    <tr data-product-id="@item.ProductId">
+                                        <td class="shoping-cart-item">
+                                            <img src="~/uploads/images/products/@item.ImagePath" alt="@item.Name">
+                                            <h5>@item.Name</h5>
+                                        </td>
+                                        <td class="shoping-cart-price">
+                                            @item.Price.ToString("$0.00")
+                                        </td>
+                                        <td class="shoping-cart-quantity">
+                                            <div class="quantity">
+                                                <div class="pro-qty">
+                                                    <input type="text" value="@item.Count">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="shoping-cart-total">
+                                            @item.Amount.ToString("$0.00")
+                                        </td>
+                                        <td class="shoping-cart-item-close">
+                                            <span class="icon_close"></span>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shoping-cart-btns">
+                    <a asp-controller="shop" asp-action="index" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+                    <a href="#" class="primary-btn cart-btn cart-btn-right">
+                        <span class="icon_loading"></span>
+                        Upadate Cart
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="shoping-continue">
+                    <div class="shoping-discount">
+                        <h5>Discount Codes</h5>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your coupon code">
+                            <button type="submit" class="site-btn">APPLY COUPON</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="shoping-checkout">
+                    <h5>Cart Total</h5>
+                    <ul>
+                        <li>Subtotal <span id="subtotal"></span></li>
+                        <li>Total <span id="total"></span></li>
+                    </ul>
+                    <a asp-area="" asp-controller="Shop" asp-action="checkout" class="primary-btn">PROCEED TO CHECKOUT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section addjs{
+
+    <script class="removeable">
+        function qtyChanged2(value, tr) {
+            let priceStr = $(tr).find(".shoping-cart-price").text().trim();
+            let price = priceStr.substring(1);
+            let symb = priceStr.substring(0, 1);
+            let total = (price * value).toFixed(2);
+            $(tr).find(".shoping-cart-total").text(`${symb}${total}`);
+
+            // yuxaridaki sekilde tehlukelidir, cunki, yoxlanis olmur.
+        }
+        function qtyChanged(value, tr, operation) {
+            // asagidaki sekilde tehlukesizdir:
+
+            let priceStr = $(tr).find("td.shoping-cart-price").text().trim();
+            let groups = /^(\$)(\d+\.\d{1,2})$/.exec(priceStr);
+            if (groups != null) {
+                let symb = groups[1];
+                let price = groups[2];
+                let amount = (price * value).toFixed(2);
+
+                $(tr).find("td.shoping-cart-total").text(`${symb}${amount}`);
+
+                computeTotalSum();
+
+                // start: basket change data
+
+                let arr = [];
+                var storedJson = $.cookie('basket');
+
+                if (storedJson != undefined && typeof storedJson == 'string') {
+                    arr = JSON.parse(storedJson);
+                }
+
+                let productId = $(tr).data('product-id');
+
+                var found = arr.filter(item => {
+                    return item.productId == productId;
+                })[0];
+
+                if (found == undefined) {
+                    found = {
+                        productId: productId,
+                        count: 1
+                    };
+                    arr.push(found);
+                } else {
+                    if (operation) {
+                        found.count++;
+                    } else {
+                        if (found.count > 1) {
+                            found.count--;
+                        } else {
+                            found.count = 1;
+                        }
+                    }
+                }
+
+                var jsonStrinfy = JSON.stringify(arr);
+
+                $.cookie('basket', jsonStrinfy, { expires: 60, path: '/' });
+
+                showBasketCount();
+
+                // end: basket change data
+            }
+        }
+
+        function computeTotalSum() {
+
+            let prices = $("td.shoping-cart-total").map((i, p) => {
+                let groups = /^(\$)(\d+\.\d{1,2})$/.exec($(p).text().trim());
+                if (groups == null) return 0;
+                let price = groups[2];
+                return parseFloat(price);
+            });
+
+            let sum = 0;
+            if (prices.length != 0) {
+                sum = prices.toArray().reduce(function (a, b) {
+                    return a + b;
+                });
+            }
+
+            $("#subtotal").text(`$${sum.toFixed(2)}`);
+            $("#total").text(`$${sum.toFixed(2)}`);
+        }
+
+        function computeTotalSum2() {
+            let prices = $("td.shoping-cart-price")
+                .toArray()
+                .map((p) => {
+                    let input = $(p).closest("tr").find('.pro-qty input[type="text"]').val();
+                    let groups = /^(\$)(\d+\.\d{1,2})$/.exec(p.innerText);
+                    if (groups == null) return 0;
+                    let price = groups[2];
+
+                    return parseFloat(price) * parseFloat(input);
+                });
+
+            if (prices.length == 0) {
+                $("#subtotal").text(`$0.00`);
+                return;
+            }
+            let sum = 0;
+            if (prices.length != 0) {
+                sum = prices.reduce(function (a, b) {
+                    return a + b;
+                });
+            }
+
+            $("#subtotal").text(`$${sum.toFixed(2)}`);
+        }
+
+        if ($("td.shoping-cart-total").length != 0) {
+            computeTotalSum();
+        }
+
+        $(".shoping-cart-item-close").on("click", function (e) {
+            e.preventDefault();
+
+            let productId = $(e.currentTarget).closest("tr").data('product-id');
+            $(e.currentTarget).closest("tr").remove();
+
+            computeTotalSum();
+
+
+            // start: basket remove item
+
+            let arr = [];
+            var storedJson = $.cookie('basket');
+
+            if (storedJson != undefined && typeof storedJson == 'string') {
+                arr = JSON.parse(storedJson);
+            }
+
+            arr = arr.filter(item => item.productId != productId)
+            var jsonStrinfy = JSON.stringify(arr);
+
+            $.cookie('basket', jsonStrinfy, { expires: 60, path: '/' });
+
+            showBasketCount();
+            // end : basket remove item
+        });
+    </script>
+}

@@ -1,0 +1,45 @@
+@model BlogTag
+
+@{
+    ViewData["Title"] = "Blog-Tags Create";
+}
+
+
+<ul class="breadcrumb">
+    <li>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
+    </li>
+    <li>
+        <p><a asp-action="index">Blog Tags</a></p>
+    </li>
+    <li><a class="active">Create</a> </li>
+</ul>
+<div class="page-title">
+    <a asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
+    <h3>Admin - Blog Tags</h3>
+</div>
+
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="grid simple ">
+            <div class="grid-body ">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <a class="btn btn-info" asp-action="index">Back to list</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

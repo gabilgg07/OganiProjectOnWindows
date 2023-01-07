@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Product>
+@{
+    int count = 0;
+    Product p;
+}
+
+@if (Model != null)
+{
+    <h4>@ViewBag.CardTitle</h4>
+    <div class="latest-product-slider owl-carousel owl-loaded owl-drag">
+        @for (int i = 0; i < 3; i++)
+        {
+            <div class="latest-prdouct-slider-item">
+                @for (int j = 0; j < 3; j++)
+                {
+                    {
+                        p = Model.ElementAt(count++);
+                    }
+                    <a asp-controller="shop" asp-action="details" asp-route-id="@p.Id" class="latest-product-item">
+                        <div class="latest-product-item-pic">
+                            <img src="/uploads/images/products/@p.Images?.FirstOrDefault(i=>i.IsMain)?.ImagePath" alt="@p.Name">
+                        </div>
+                        <div class="latest-product-item-text">
+                            <h6>@p.Name</h6>
+                            <span>$@p.Price.ToString("0.##")</span>
+                        </div>
+                    </a>
+                }
+            </div>
+        }
+    </div>
+}
+

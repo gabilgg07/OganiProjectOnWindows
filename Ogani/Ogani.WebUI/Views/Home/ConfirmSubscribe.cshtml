@@ -1,0 +1,22 @@
+﻿@model Tuple<string,bool>
+@{
+    ViewBag.Title = "Home Confirm Subscribe";
+ }
+
+
+<div class="row">
+    <div class="col-6 offset-3 text-center">
+        @if (Model.Item2)
+        {
+            <div class="alert alert-danger">
+                @Model.Item1
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-success">
+                @Model.Item1
+            </div>
+        }
+    </div>
+</div>

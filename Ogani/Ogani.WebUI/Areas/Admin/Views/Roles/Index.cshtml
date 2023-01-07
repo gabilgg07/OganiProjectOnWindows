@@ -1,0 +1,121 @@
+@model IEnumerable<OganiRole>
+
+@{
+    ViewData["Title"] = "Roles Index";
+}
+
+<input type="hidden" value="@ViewBag.ToastrMsg" id="hasMessage" />
+
+<ul class="breadcrumb">
+    <li>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
+    </li>
+    <li><a class="active">Roles</a> </li>
+</ul>
+<div class="page-title">
+    <a asp-controller="home" asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
+    <h3>Admin</h3>
+</div>
+
+
+<div class="row-fluid">
+    <div class="span12 w-60">
+        <div class="grid simple ">
+            <div class="grid-body " id="formData">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th class="text-center w-25">
+                                <a asp-action="Create" class="btn btn-primary btn-cons"><i class="fa fa-plus-circle"></i></a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="vertical-middle">
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td class="text-center vertical-middle">
+                                    <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-default btn-cons min-w-0 mb-0"><i class="fa fa-pencil"></i></a>
+                                    <a asp-action="details" asp-route-id="@item.Id" class="btn btn-info btn-cons min-w-0 mb-0"><i class="fa fa-info-circle"></i></a>
+                                    <a onclick="removeItem(@item.Id,'@item.Name')" class="btn btn-danger btn-cons min-w-0 mb-0"><i class="fa fa-trash-o"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                @Html.AntiForgeryToken()
+            </div>
+            <div style="visibility:hidden;">
+                <form method="post" asp-action="ShowToastr" id="sendMsg">
+                    <input type="hidden" name="toastrMsg" id="toastrMsg" value="" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section addjs{
+
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
+
+
+    <script class="removeable">
+        $(document).ready(function () {
+            if ($('#hasMessage').val().trim()) {
+                toastr.success(`${$('#hasMessage').val()}`, "Ugur");
+            }
+        });
+
+        function removeItem(_id, name) {
+
+            let frmData = $('#formData').getFormData({
+                id: _id
+                });
+
+            swal({
+                title: "Diqqet!",
+                text: `Eminsiniz ki, "${name}" sistemden silinsin?`,
+                icon: "warning",
+                buttons: ["Xeyr", "Beli"],
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            url: '@Url.Action("Delete")',
+                            type: 'POST',
+                            data: frmData,
+                            success: function (response) {
+                                if (response.error) {
+                                    toastr.error(response.message, "Xeta");
+                                    return;
+                                }
+                                $('#toastrMsg').val(response.message);
+                                $('#sendMsg').submit();
+
+                                // asagidaki ShowToastr action-ni yazmadan,
+                                // sehife refresh olmadan evvel 5saniye erzinde toastr cixartmaq yoludur
+
+                                //toastr.success(response.message, "Ugur");
+                                //setTimeout(() => {
+                                //    window.location.reload();
+                                //}, 5000);
+
+                            },
+                            error: function (response) {
+                                toastr.error("Gozlenilmez xeta bas verdi", "Ugursuz oldu");
+                            },
+                        });
+                    }
+                });
+        }
+    </script>
+}

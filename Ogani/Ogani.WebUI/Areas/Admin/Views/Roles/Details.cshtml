@@ -1,0 +1,206 @@
+@model OganiRole
+
+@{
+    ViewData["Title"] = "Role Details";
+}
+
+<ul class="breadcrumb">
+    <li>
+        <p><a asp-controller="home" asp-action="index">Admin</a></p>
+    </li>
+    <li>
+        <p><a asp-action="index">Roles</a></p>
+    </li>
+    <li><a class="active">View</a> </li>
+</ul>
+<div class="page-title">
+    <a asp-action="index">
+        <i class="far fa-arrow-alt-circle-left"></i>
+    </a>
+    <h3>Admin - Roles</h3>
+</div>
+
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="grid simple ">
+            <div class="grid-body ">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <p class="form-control">
+                        @Model.Name
+                    </p>
+                </div>
+                <div class="form-group">
+                    <a class="btn btn-warning" asp-action="edit" asp-route-id="@Model.Id">Edit</a>
+                    <a class="btn btn-info" asp-action="index">Back to list</a>
+                </div>
+            </div>
+
+            <div class="grid-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active">
+                                <a href="#tabUsers" role="tab" data-toggle="tab" aria-expanded="true">Users</a>
+                            </li>
+                            <li class="">
+                                <a href="#tabClaims" role="tab" data-toggle="tab" aria-expanded="false">Claims</a>
+                            </li>
+                        </ul>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse"></a>
+                            <a href="#grid-config" data-toggle="modal" class="config"></a>
+                            <a href="javascript:;" class="reload"></a>
+                            <a href="javascript:;" class="remove"></a>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabUsers">
+                                <div class="row column-seperation">
+                                    <div class="col-md-6">
+                                        <table class="table table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Secilib
+                                                    </th>
+                                                    <th>
+                                                        User Adi
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (Tuple<int, string, bool> item in ViewBag.Users)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            <label for="user_@item.Item1"></label>
+                                                            <input type="checkbox"
+                                                                   id="user_@item.Item1"
+                                                                   data-user-id="@item.Item1"
+                                                                   data-role-id="@Model.Id"
+                                                                   @(item.Item3 ? " checked" : "") />
+                                                        </td>
+                                                        <td>
+                                                            @item.Item2
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabClaims">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <table class="table table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Secilib
+                                                    </th>
+                                                    <th>
+                                                        Selahiyyet Adi
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (ViewBag.Policies != null)
+                                                {
+                                                    @foreach (Tuple<string, bool> item in ViewBag.Policies)
+                                                    {
+                                                        <tr>
+                                                            <td>
+                                                                <label for="policy_@item.Item1.Replace(".","_")"></label>
+                                                                <input type="checkbox"
+                                                                       id="policy_@item.Item1.Replace(".","_")"
+                                                                       data-policy-name="@item.Item1"
+                                                                       data-role-id="@Model.Id"
+                                                                       @(item.Item2 ? " checked" : "") />
+                                                            </td>
+                                                            <td>
+                                                                @item.Item1
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section addjs{
+    <script>
+$(document).ready(function () {
+    $('[id^=user_]').change(function (e) {
+                let data = $(e.currentTarget).data();
+                data.selected = $(e.currentTarget).is(':checked');
+                $.ajax({
+                    url: '@Url.Action("SetRole")',
+                    type: 'POST',
+                    data: data,
+                    success: function (response) {
+                        if (response.error) {
+                            toastr.error(response.message, 'Xeta!');
+
+                            $(e.currentTarget).prop('checked', !data.selected);
+                            return;
+                        }
+
+
+                        toastr.success(response.message, 'Ugur!');
+                    },
+                    error: function (response) {
+                        $(e.currentTarget).prop('checked', !data.selected);
+                        let isAuthenticated = @(User.Identity.IsAuthenticated)
+
+                            if (!isAuthenticated){
+                                window.location.href = '@Url.Action("Details", Model.Id)';
+                            }
+                    }
+                    });
+    });
+
+    $('[id^=policy_]').change(function (e) {
+                let data = $(e.currentTarget).data();
+        data.selected = $(e.currentTarget).is(':checked');
+
+        console.log(data);
+                $.ajax({
+                    url: '@Url.Action("SetPolicy")',
+                    type: 'POST',
+                    data: data,
+                    success: function (response) {
+                        if (response.error) {
+                            toastr.error(response.message, 'Xeta!');
+
+                            $(e.currentTarget).prop('checked', !data.selected);
+                            return;
+                        }
+
+
+                        toastr.success(response.message, 'Ugur!');
+                    },
+                    error: function (response) {
+                        $(e.currentTarget).prop('checked', !data.selected);
+                        let isAuthenticated = @(User.Identity.IsAuthenticated)
+
+                            if (!isAuthenticated){
+                                window.location.href = '@Url.Action("Details", Model.Id)';
+                            }
+                    }
+                });
+    });
+
+        });</script>
+}

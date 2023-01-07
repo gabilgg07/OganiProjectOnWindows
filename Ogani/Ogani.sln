@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ogani.WebUI", "Ogani.WebUI\Ogani.WebUI.csproj", "{320C438B-BE71-483D-8985-3514117EA629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UploadExample.WebApp", "UploadExample.WebApp\UploadExample.WebApp.csproj", "{88230D87-C22A-4F97-A7EB-FDD4C5C1F4B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{320C438B-BE71-483D-8985-3514117EA629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{320C438B-BE71-483D-8985-3514117EA629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{320C438B-BE71-483D-8985-3514117EA629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{320C438B-BE71-483D-8985-3514117EA629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88230D87-C22A-4F97-A7EB-FDD4C5C1F4B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88230D87-C22A-4F97-A7EB-FDD4C5C1F4B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88230D87-C22A-4F97-A7EB-FDD4C5C1F4B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88230D87-C22A-4F97-A7EB-FDD4C5C1F4B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A683377-4DC5-481F-A638-5CCD11516BA8}
+	EndGlobalSection
+EndGlobal

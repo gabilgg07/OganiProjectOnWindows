@@ -1,0 +1,70 @@
+﻿@model PagedViewModel<Blog>
+@{
+    ViewBag.Title = "Blog Index";
+}
+
+
+<section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Blog</h2>
+                    <div class="breadcrumb-option">
+                        <a asp-controller="home" asp-action="index">Home</a>
+                        <span>Blog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="blog spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-5">
+                <div class="blog-sidebar">
+                    <div class="blog-sidebar-search">
+                        <form action="#">
+                            <input type="text" placeholder="Search...">
+                            <button type="submit"><span class="icon_search"></span></button>
+                        </form>
+                    </div>
+                    @await Component.InvokeAsync("BlogCategories")
+                    @await Component.InvokeAsync("RecentNews")
+                    @await Component.InvokeAsync("BlogTags")
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-7">
+                <div class="row">
+                    @foreach (var item in Model.Items)
+                    {
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="blog-item">
+                                <div class="blog-item-pic">
+                                    <img src="~/uploads/images/blogs/@item.ImagePath" alt="@item.Title">
+                                </div>
+                                <div class="blog-item-text">
+                                    <ul>
+                                        <li><i class="fa fa-calendar-o"></i> @item.PublishedDate?.ToString("MMM dd, yyyy")</li>
+                                        @*<li><i class="fa fa-comment-o"></i> @item.Comments.Count()</li>*@
+                                    </ul>
+                                    <h5><a asp-action="details" asp-route-id="@item.Id">@item.Title.CleanPlainText(30)</a></h5>
+                                    <p>
+                                        @item.Body.CleanPlainText(100)
+                                    </p>
+                                    <a asp-action="details" asp-route-id="@item.Id" class="blog-btn">READ MORE <span class="arrow_right"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="col-lg-12">
+                        @Model.GetPagination(Url, "Index")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

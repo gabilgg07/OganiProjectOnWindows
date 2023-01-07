@@ -1,0 +1,429 @@
+﻿@inject OganiDbContext db;
+
+@{
+    var appInfo = db.AppInfos.FirstOrDefault();
+    string title = ViewBag.Title;
+    bool isHomeIndex = title.ToUpper().Contains("HOME INDEX");
+}
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="@appInfo.Title organic shopping site">
+    <meta name="keywords" content="@appInfo.Title, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@appInfo.Title | @title</title>
+    <link rel="shortcut icon" href="#">
+
+    <base href="~/" />
+
+    <script src="https://kit.fontawesome.com/43720ad928.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="lib/toastr.js/toastr.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+    @RenderSection("addcss", required: false)
+
+    <style>
+        .basketCount:empty {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <div class="humberger-menu-overlay"></div>
+    <div class="humberger-menu-wrapper">
+        <div class="humberger-menu-logo">
+            <a asp-controller="home" asp-action="index"><img src="assets/img/logo.png" alt=""></a>
+        </div>
+        <div class="humberger-menu-cart">
+            <ul>
+                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                <li>
+                    <a asp-area="" asp-controller="Shop" asp-action="ShoppingCard">
+                        <i class="fa fa-shopping-bag"></i>
+                        <span class="basketCount"></span>
+                    </a>
+                </li>
+            </ul>
+            <div class="header-cart-price">item: <span class="basketAmount"></span></div>
+        </div>
+        <div class="humberger-menu-widget">
+            <div class="header-top-right-language">
+                <img src="assets/img/language.png" alt="">
+                <div>English</div>
+                <span class="arrow_carrot-down"></span>
+                <ul>
+                    <li><a href="#">Spanis</a></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </div>
+            <div class="header-top-right-auth">
+                <a href="#"><i class="fa fa-user"></i> @LayoutResource.Login</a>
+            </div>
+        </div>
+        <nav class="humberger-menu-nav mobile-menu">
+            <partial name="_Navbar" />
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="header-top-right-social">
+            <social-network asp-link="@appInfo.Facebook" asp-icon-class="fa fa-facebook" />
+            <social-network asp-link="@appInfo.Instagram" asp-icon-class="fa fa-instagram" />
+            <social-network asp-link="@appInfo.Twitter" asp-icon-class="fa fa-twitter" />
+            <social-network asp-link="@appInfo.Linkedin" asp-icon-class="fa fa-linkedin" />
+            <social-network asp-link="@appInfo.Pinterest" asp-icon-class="fa fa-pinterest-p" />
+        </div>
+        <div class="humberger-menu-contact">
+            <ul>
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:@appInfo.Email?subject=Ogani%20Organic%20Shopping%20Site">@appInfo.Email</a>
+                </li>
+                <li>@appInfo.HashTag</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header-top-left">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="mailto:@appInfo.Email?subject=Ogani%20Organic%20Shopping%20Site">@appInfo.Email</a>
+                                </li>
+                                <li>@appInfo.HashTag</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header-top-right">
+                            <div class="header-top-right-social">
+                                <social-network asp-link="@appInfo.Facebook" asp-icon-class="fa fa-facebook" />
+                                <social-network asp-link="@appInfo.Instagram" asp-icon-class="fa fa-instagram" />
+                                <social-network asp-link="@appInfo.Twitter" asp-icon-class="fa fa-twitter" />
+                                <social-network asp-link="@appInfo.Linkedin" asp-icon-class="fa fa-linkedin" />
+                                <social-network asp-link="@appInfo.Pinterest" asp-icon-class="fa fa-pinterest-p" />
+                            </div>
+                            <div class="header-top-right-language">
+                                <img src="assets/img/language.png" alt="">
+                                <div>English</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">Spanis</a></li>
+                                    <li><a href="#">English</a></li>
+                                </ul>
+                            </div>
+                            <div class="header-top-right-auth">
+                                <a href="#"><i class="fa fa-user"></i> @LayoutResource.Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header-logo">
+                        <a asp-controller="home" asp-action="index"><img src="assets/img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header-menu">
+                        <partial name="_Navbar" />
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header-cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li>
+                                <a asp-area="" asp-controller="Shop" asp-action="ShoppingCard">
+                                    <i class="fa fa-shopping-bag"></i>
+                                    <span class="basketCount"></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="header-cart-price">item: <span class="basketAmount"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger-open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="hero @(isHomeIndex?"":"hero-normal")">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero-categories">
+                        <div class="hero-categories-all">
+                            <i class="fa fa-bars"></i>
+                            <span>@LayoutResource.AllDepartments</span>
+                        </div>
+                        @await Component.InvokeAsync("Category")
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero-search">
+                        <div class="hero-search-form">
+                            <form action="#">
+                                <div class="hero-search-categories">
+                                    @LayoutResource.AllCategories
+                                    <span class="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="@LayoutResource.PlaceholdSearch">
+                                <button type="submit" class="site-btn">@LayoutResource.Search</button>
+                            </form>
+                        </div>
+                        <div class="hero-search-phone">
+                            <div class="hero-search-phone-icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero-search-phone-text">
+                                <h5>@appInfo.Phone</h5>
+                                <span>@appInfo.ActivityHashTag</span>
+                            </div>
+                        </div>
+                    </div>
+                    @if (isHomeIndex)
+                    {
+                        <div class="hero-item set-bg" data-setbg="assets/img/hero/banner.jpg">
+                            <div class="hero-text">
+                                <span>FRUIT FRESH</span>
+                                <h2>Vegetable <br />100% Organic</h2>
+                                <p>Free Pickup and Delivery Available</p>
+                                <a href="#" class="primary-btn">SHOP NOW</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @RenderBody()
+
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-about">
+                        <div class="footer-about-logo">
+                            <a asp-controller="home" asp-action="index"><img src="assets/img/logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: @appInfo.Address</li>
+                            <li>Phone: @appInfo.Phone</li>
+                            <li>
+                                @LayoutResource.Email:
+                                <a href="mailto:@appInfo.Email?subject=Ogani%20Organic%20Shopping%20Site">@appInfo.Email</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer-widget">
+                        <h6>@LayoutResource.UsefulLinks</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">About Our Shop</a></li>
+                            <li><a href="#">Secure Shopping</a></li>
+                            <li><a href="#">Delivery infomation</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Who We Are</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-widget">
+                        <h6>@LayoutResource.JoinOurNewsletterNow</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form method="post" asp-controller="home" asp-action="subscribe" id="frmSubscribe">
+                            <input type="text" placeholder="@LayoutResource.PlaceholdEmail" name="email">
+                            <button type="submit" class="site-btn">@LayoutResource.Subscribe</button>
+                        </form>
+                        <div class="footer-widget-social">
+                            <social-network asp-link="@appInfo.Facebook" asp-icon-class="fa fa-facebook" />
+                            <social-network asp-link="@appInfo.Instagram" asp-icon-class="fa fa-instagram" />
+                            <social-network asp-link="@appInfo.Twitter" asp-icon-class="fa fa-twitter" />
+                            <social-network asp-link="@appInfo.Linkedin" asp-icon-class="fa fa-linkedin" />
+                            <social-network asp-link="@appInfo.Pinterest" asp-icon-class="fa fa-pinterest-p" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copyright">
+                        <div class="footer-copyright-text">
+                            <p>
+                                Copyright &copy; @DateTime.Now.Year All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+                            </p>
+                        </div>
+                        <div class="footer-copyright-payment"><img src="assets/img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.nice-select.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.slicknav.js" type="text/javascript"></script>
+    <script src="assets/js/mixitup.min.js" type="text/javascript"></script>
+    <script src="assets/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="lib/toastr.js/toastr.min.js"></script>
+    <script src="~/lib/jquery-cookie/jquery.cookie.js"></script>
+
+    <script src="assets/js/main.js" type="text/javascript"></script>
+
+    <script class="removeable">
+		function showBasketCount() {
+
+			let arr = [];
+			var storedJson = $.cookie('basket');
+
+			if (storedJson != undefined && typeof storedJson == 'string') {
+				arr = JSON.parse(storedJson);
+			}
+
+			if (arr.length > 0) {
+				$('.basketCount').text(arr.length);
+			} else {
+				$('.basketCount').text("");
+			}
+
+			$.ajax({
+				url: '@Url.Action("ShoppingCardAmount", "Shop")',
+				type: 'post',
+				success: function (response) {
+					if (!response.error) {
+						$('.basketAmount').text(`$${response.amount}`);
+					}
+				}
+			});
+
+		 }
+
+		$(document).ready(function () {
+
+			toastr.options = {
+				"closeButton": true,
+				"debug": false,
+				"newestOnTop": false,
+				"progressBar": true,
+				"positionClass": "toast-bottom-right",
+				"preventDuplicates": true,
+				"onclick": null,
+				"showDuration": "300",
+				"hideDuration": "1000",
+				"timeOut": "5000",
+				"extendedTimeOut": "2000",
+				"showEasing": "swing",
+				"hideEasing": "linear",
+				"showMethod": "fadeIn",
+				"hideMethod": "fadeOut"
+			}
+
+			$('#frmSubscribe').submit(function (e) {
+				e.preventDefault();
+
+				let url = $(e.currentTarget).attr('action');
+				let formData = new FormData(e.currentTarget);
+
+				let myValue = formData.get("email");
+
+				if (!isEmail(myValue)) {
+
+					toastr.warning("E-poct unvani dogru deyil", "Xeberdarliq");
+					$(e.currentTarget).find('[name="email"]').focus();
+
+					return;
+				}
+
+				$.ajax({
+					url: `${url}`,
+					type: 'POST',
+					data: formData,
+					processData: false,
+					contentType: false,
+					beforeSend: function () {
+						// request getmezden evvel:
+						$(".loader").fadeIn();
+						$('#preloder').delay(200).fadeIn("slow");
+					},
+					success: function (response) {
+						if (response.error) {
+							toastr.error(response.message, "Xeta");
+							$(e.currentTarget).find('[name="email"]').focus();
+							return;
+						}
+						toastr.success(response.message, "Ugur");
+						$(e.currentTarget).find('[name="email"]').val("");
+					},
+					error: function (response) {
+						console.error(response);
+						toastr.error("Gozlenilmez xeta bas verdi", "Ugursuz oldu");
+					},
+				})
+					.always(function () {
+						// sorgunun sonunda isleyir:
+
+						$(".loader").fadeOut();
+						$('#preloder').delay(200).fadeOut("slow");
+					});
+			});
+
+			showBasketCount();
+
+		});
+    </script>
+
+    @RenderSection("addjs", required: false)
+
+    <script>$(document).ready(function () {
+            $('.removeable').remove();
+        });</script>
+</body>
+</html>
+
+
+
+
+
+

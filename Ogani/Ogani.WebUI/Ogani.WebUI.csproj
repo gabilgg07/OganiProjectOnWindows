@@ -1,0 +1,150 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\" />
+    <None Remove="Models\" />
+    <None Remove="Views\" />
+    <None Remove="Views\Shared\" />
+    <None Remove="AppCode\" />
+    <None Remove="Views\Home\" />
+    <None Remove="Views\Shop\" />
+    <None Remove="Views\Blog\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="Models\Entity\" />
+    <None Remove="Models\DataContext\" />
+    <None Remove="Pomelo.EntityFrameworkCore.MySql" />
+    <None Remove="AppCode\ViewComponents\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\Category\" />
+    <None Remove="Models\ViewModel\" />
+    <None Remove="Views\Shared\Components\SpecialProducts\" />
+    <None Remove="AppCode\Types\" />
+    <None Remove="AppCode\TagHelpers\" />
+    <None Remove="jQuery" />
+    <None Remove="Microsoft.Web.LibraryManager.Build" />
+    <None Remove="AppCode\Extensions\" />
+    <None Remove="MailKit" />
+    <None Remove="AppCode\DataAnnotation\" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\Admin\" />
+    <None Remove="Areas\Admin\Controllers\" />
+    <None Remove="Areas\Admin\Models\" />
+    <None Remove="Areas\Admin\Views\" />
+    <None Remove="Areas\Admin\Views\Home\" />
+    <None Remove="Areas\Admin\Views\Shared\" />
+    <None Remove="Views\Shared\Components\BlogTags\" />
+    <None Remove="Views\Shared\Components\RecentNews\" />
+    <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="AppCode\Providers\" />
+    <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Microsoft.Extensions.Identity.Stores" />
+    <None Remove="Models\Entity\Membership\" />
+    <None Remove="Areas\Admin\Models\ViewModel\" />
+    <None Remove="Areas\Admin\Views\Account\" />
+    <None Remove="AppCode\Middlewares\" />
+    <None Remove="AppCode\Resources\" />
+    <None Remove="AppCode\Resources\UserResource\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="wwwroot\assets\" />
+    <Folder Include="wwwroot\uploads\" />
+    <Folder Include="wwwroot\uploads\images\" />
+    <Folder Include="wwwroot\uploads\videos\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Shop\" />
+    <Folder Include="Views\Blog\" />
+    <Folder Include="Models\Entity\" />
+    <Folder Include="Models\DataContext\" />
+    <Folder Include="AppCode\ViewComponents\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\Category\" />
+    <Folder Include="Models\ViewModel\" />
+    <Folder Include="Views\Shared\Components\SpecialProducts\" />
+    <Folder Include="AppCode\Types\" />
+    <Folder Include="AppCode\TagHelpers\" />
+    <Folder Include="wwwroot\uploads\images\blogs\" />
+    <Folder Include="AppCode\Extensions\" />
+    <Folder Include="AppCode\DataAnnotation\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Admin\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="wwwroot\Admin\" />
+    <Folder Include="wwwroot\Admin\assets\" />
+    <Folder Include="wwwroot\Admin\assets\js\" />
+    <Folder Include="wwwroot\Admin\assets\css\" />
+    <Folder Include="wwwroot\Admin\assets\img\" />
+    <Folder Include="Views\Shared\Components\BlogTags\" />
+    <Folder Include="Views\Shared\Components\RecentNews\" />
+    <Folder Include="AppCode\Providers\" />
+    <Folder Include="wwwroot\uploads\images\authors\" />
+    <Folder Include="Models\Entity\Membership\" />
+    <Folder Include="Areas\Admin\Models\ViewModel\" />
+    <Folder Include="Areas\Admin\Views\Account\" />
+    <Folder Include="AppCode\Middlewares\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\assets\" />
+    <Content Remove="wwwroot\uploads\" />
+    <Content Remove="wwwroot\uploads\images\" />
+    <Content Remove="wwwroot\uploads\videos\" />
+    <Content Remove="wwwroot\uploads\images\blogs\" />
+    <Content Remove="wwwroot\Admin\" />
+    <Content Remove="wwwroot\Admin\assets\" />
+    <Content Remove="wwwroot\Admin\assets\js\" />
+    <Content Remove="wwwroot\Admin\assets\css\" />
+    <Content Remove="wwwroot\Admin\assets\img\" />
+    <Content Remove="wwwroot\uploads\images\authors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.31" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.31">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.31" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.31">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.7" />
+    <PackageReference Include="jQuery" Version="3.6.1" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
+    <PackageReference Include="MailKit" Version="3.4.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.25" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.31" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.31" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="AppCode\Resources\UserResource\LayoutResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LayoutResource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AppCode\Resources\UserResource\LayoutResource.Designer.cs">
+      <DependentUpon>LayoutResource.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+</Project>

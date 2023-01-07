@@ -1,0 +1,136 @@
+﻿@model Tuple<string, string>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section addcss {
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <style>
+        label.imager {
+            width: 350px;
+            height: 350px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: block;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+            label.imager > input[type="file"] {
+                display: none;
+            }
+
+        .zoomArea {
+            width: 600px;
+            height: 450px;
+            overflow: hidden;
+            border: 1px solid
+        }
+
+            .zoomArea > img {
+                max-width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+    </style>
+}
+
+@if (Model != null)
+{
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h2><strong>Name:</strong> @Model.Item1</h2>
+            <br />
+            <h3><strong>ImageName:</strong> @Model.Item2.Substring(0, Model.Item2.Length - 4)</h3>
+            <br />
+            <img src="~/uploads/images/@Model.Item2" id="eZoom"
+                 style="max-width:100%;border-radius:8px;box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5)" />
+        </div>
+    </div>
+}
+else
+{
+    @*<div class="row">
+            <div class="col-8 offset-2">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="Name" />
+                    </div>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="photo" name="profilePhoto" accept="image/*">
+                            <label class="custom-file-label" for="photo">Choose file</label>
+                        </div>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary" type="submit">Button</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>*@
+
+    <div class="row">
+        <div class="col-6">
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="Name" />
+                </div>
+                <div class="form-group">
+                    <label for="photo">Photo</label>
+                    <label class="imager" id="imageviewer">
+                        <input type="file" accept="image/*"
+                               class="form-control"
+                               id="photo"
+                               name="profilePhoto"
+                               parent="imageviewer" />
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <div class="zoomArea">
+                <img id="eZoom" src="~/uploads/images/221216084154-d84e8a51-6d94-4100-89da-92ede57ff768.jpg" alt="Product Image">
+            </div>
+
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script src="https://www.jqueryscript.net/demo/image-viewer-ezoom/ezoom.js"></script>
+    <script>$(document).ready(function () {
+            //$('input[type="file"]').change(function (e) {
+            //    var fileName = e.target.files[0].name;
+            //    $("label[for='photo']").text(fileName);
+
+            //});
+
+            $('#photo').change(function (ev) {
+                var file = ev.target.files[0];
+
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        let viewer = $(ev.currentTarget).parent();
+                        $(viewer).css('background-image', `url(${e.target.result})`);
+                        $('#eZoom').attr('src', `${e.target.result}`);
+                    }
+
+                    reader.readAsDataURL(file);
+                }
+            });
+            ezoom.onInit($('#eZoom'), {
+                hideControlBtn: false
+            });
+        });</script>
+}
+
