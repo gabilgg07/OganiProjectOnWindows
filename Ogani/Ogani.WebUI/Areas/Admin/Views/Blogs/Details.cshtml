@@ -9,15 +9,15 @@
         <p><a asp-controller="home" asp-action="index">Admin</a></p>
     </li>
     <li>
-        <p><a asp-action="index">Blogs</a></p>
+        <p><a asp-action="index">@BlogResource.Blogs</a></p>
     </li>
-    <li><a class="active">Details</a> </li>
+    <li><a class="active">@CrudResource.Details</a> </li>
 </ul>
 <div class="page-title">
     <a asp-action="index">
         <i class="far fa-arrow-alt-circle-left"></i>
     </a>
-    <h3>Admin - Blogs</h3>
+    <h3>Admin - @BlogResource.Blogs</h3>
 </div>
 
 
@@ -39,7 +39,7 @@
                         <span asp-validation-for="Body" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <image asp-caption="Blog Image"
+                        <image asp-caption="@BlogResource.BlogImage"
                                asp-for="Image"
                                asp-path="/uploads/images/blogs/@Model.ImagePath"
                                readonly />
@@ -81,8 +81,8 @@
                         </p>
                     </div>
                     <div class="form-group">
-                        <a class="btn btn-warning" asp-action="edit" asp-route-id="@Model.Id">Edit</a>
-                        <a class="btn btn-info" asp-action="index">Back to List</a>
+                        <a class="btn btn-warning" asp-action="edit" asp-route-id="@Model.Id">@CrudResource.EditBtn</a>
+                        <a class="btn btn-info" asp-action="index">@CrudResource.BackToList</a>
                     </div>
                 </form>
             </div>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="UserName" xml:space="preserve">
+		<value>Имя пользователя</value>
+	</data>
+	<data name="Password" xml:space="preserve">
+		<value>Пароль</value>
+	</data>
+	<data name="Login" xml:space="preserve">
+		<value>Вход</value>
+	</data>
+	<data name="SigninTitle" xml:space="preserve">
+		<value>Войдите в Огани</value>
+	</data>
+	<data name="SigninBody" xml:space="preserve">
+		<value>Используйте Facebook, Twitter или свое имя пользователя для входа.</value>
+	</data>
+	<data name="LoginWithFb" xml:space="preserve">
+		<value>Войти с Facebook</value>
+	</data>
+	<data name="LoginWithTw" xml:space="preserve">
+		<value>Войти с Twitter</value>
+	</data>
+
+	<data name="AccessNotGranted" xml:space="preserve">
+		<value>доступ не предоставлен</value>
+	</data>
+	<data name="Yay" xml:space="preserve">
+		<value>Ура</value>
+	</data>
+	<data name="AccessGranted" xml:space="preserve">
+		<value>доступ разрешен</value>
+	</data>
+	
+	<data name="SupposedToLeave" xml:space="preserve">
+		<value>Ты же знаешь, что должен уйти, да?</value>
+	</data>
+	<data name="ToDo" xml:space="preserve">
+		<value>Так много предстоит сделать, так мало времени...</value>
+	</data>
+	<data name="KeyForYou" xml:space="preserve">
+		<value>Ладно, кажется, тебя это волнует. Вот ключ специально для вас</value>
+	</data>
+</root>
+

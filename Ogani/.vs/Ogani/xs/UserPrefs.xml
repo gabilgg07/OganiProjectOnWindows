@@ -1,51 +1,46 @@
-﻿<Properties StartupConfiguration="{320C438B-BE71-483D-8985-3514117EA629}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.UploadExample.WebApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
+﻿<Properties StartupConfiguration="{46952EC3-66C9-4268-9F0B-70C1EEE4F7AD}|Default">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Ogani.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.SignalRIntro PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Ogani.WebUI/Startup.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Ogani.WebUI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.ItemProperties.UploadExample.WebApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SignalRIntro/Program.cs">
     <Files>
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Roles/Details.cshtml" Line="20" Column="22" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Controllers/RolesController.cs" Line="25" Column="1" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Controllers/AccountController.cs" Line="107" Column="1" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Views/Account/UserDetails.cshtml" Line="176" Column="13" />
-      <File FileName="Ogani.WebUI/Models/DataContext/OganiDbSeed.cs" Line="58" Column="31" />
-      <File FileName="Ogani.WebUI/Areas/Admin/Controllers/AuthorsController.cs" Line="10" Column="33" />
-      <File FileName="Ogani.WebUI/Startup.cs" Line="67" Column="51" />
-      <File FileName="Ogani.WebUI/Program.cs" Line="1" Column="1" />
+      <File FileName="SignalRIntro/AppCode/Hubs/ChatHub.cs" />
+      <File FileName="SignalRIntro/Views/Home/ChatRoom.cshtml" Line="261" Column="52" />
+      <File FileName="SignalRIntro/Program.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Ogani" expanded="True">
-            <Node name="Ogani.WebUI" expanded="True">
-              <Node name="AppCode" expanded="True" />
-              <Node name="Areas" expanded="True">
-                <Node name="Admin" expanded="True">
-                  <Node name="Controllers" expanded="True" />
-                  <Node name="Models" expanded="True">
-                    <Node name="ViewModel" expanded="True" />
+            <Node name="SignalRIntro" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="AppCode" expanded="True">
+                <Node name="Hubs" expanded="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="lib" expanded="True">
+                  <Node name="bootstrap" expanded="True">
+                    <Node name="css" expanded="True" />
                   </Node>
-                  <Node name="Views" expanded="True">
-                    <Node name="Account" expanded="True" />
-                    <Node name="Categories" expanded="True" />
-                    <Node name="Roles" expanded="True" />
-                    <Node name="Shared" expanded="True" />
+                  <Node name="microsoft-signalr" expanded="True">
+                    <Node name="signalr.js" expanded="True" />
                   </Node>
                 </Node>
               </Node>
-              <Node name="Models" expanded="True">
-                <Node name="DataContext" expanded="True" />
-                <Node name="Entity" expanded="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-              </Node>
-              <Node name="Startup.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>

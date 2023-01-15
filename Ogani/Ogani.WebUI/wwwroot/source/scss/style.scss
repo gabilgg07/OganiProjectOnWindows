@@ -349,6 +349,7 @@ ol {
   }
   img {
     margin-right: 6px;
+    width: 27px;
   }
   div {
     font-size: 14px;
@@ -655,7 +656,7 @@ ol {
       }
       span {
         position: absolute;
-        right: 14px;
+        right: 6px;
         top: 14px;
       }
     }
@@ -911,6 +912,7 @@ ol {
     font-weight: 700;
     color: #1c1c1c;
     margin-bottom: 45px;
+    font-size: 20px;
   }
 }
 .latest-product-slider.owl-carousel {
@@ -1513,6 +1515,7 @@ ul {
   &.pagination {
     position: relative;
     padding-top: 10px;
+    justify-content: center;
     & > li {
       margin-right: 16px;
       &:last-child {

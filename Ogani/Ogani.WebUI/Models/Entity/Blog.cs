@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Http;
+using Resource;
 
 namespace Ogani.WebUI.Models.Entity
 {
@@ -10,10 +11,12 @@ namespace Ogani.WebUI.Models.Entity
     {
 
 		[Required]
+        [Display(ResourceType =typeof(BlogResource),Name = "Title")]
 		public string Title { get; set; }
 
         [Required]
-		public string Body { get; set; }
+        [Display(ResourceType = typeof(BlogResource), Name = "Body")]
+        public string Body { get; set; }
 
         //[NotMapped] --> db de saxlama demekdir
         //public IFormFile ImagePath { get; set; }
@@ -22,11 +25,13 @@ namespace Ogani.WebUI.Models.Entity
         //[Column("ImagePath")]
         //public string ImagePathTemp { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "BlogImage")]
         public string ImagePath { get; set; }
 
         [NotMapped]
         public IFormFile Image { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "PublishedDate")]
         public DateTime? PublishedDate { get; set; }
 
         public string Facebook { get; set; }
@@ -37,12 +42,16 @@ namespace Ogani.WebUI.Models.Entity
 
         public string Instagram { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "AuthorFullName")]
         public int AuthorId { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "AuthorFullName")]
         public virtual Author Author { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "CategoryName")]
         public int BlogCategoryId { get; set; }
 
+        [Display(ResourceType = typeof(BlogResource), Name = "CategoryName")]
         public virtual BlogCategory BlogCategory { get; set; }
 
         //public virtual ICollection<Comment> Comments { get; set; }

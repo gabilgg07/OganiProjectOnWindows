@@ -101,7 +101,6 @@ namespace Ogani.WebUI.Areas.Admin.Controllers
 
         public IActionResult AccessDenied(SignInModel user)
         {
-
             return View();
         }
 

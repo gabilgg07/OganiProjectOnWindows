@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JmklmvrR2PDU/KzijDGS0Smo90tVum6i1JUkS46+FFsbfLrgDLCmBzkSyT0pn6nGVWfzn/VcZY8kXwo+Ehg/9g==",
+  "dgSpecHash": "YOgj9ZwXODRyif21hD7dN2M/J2ZMAWu5yy4oEcYgP8my3K9VjaCWTzcHlHC0v3HAyr13GnVuFSxNJv0RO5ke7Q==",
   "success": true,
-  "projectFilePath": "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\Ogani.WebUI\\Ogani.WebUI.csproj",
+  "projectFilePath": "D:\\code\\Lessons\\OganiProjectOnWindows\\Ogani\\Ogani.WebUI\\Ogani.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GabilGG\\.nuget\\packages\\jquery\\3.6.1\\jquery.3.6.1.nupkg.sha512",
     "C:\\Users\\GabilGG\\.nuget\\packages\\mailkit\\3.4.3\\mailkit.3.4.3.nupkg.sha512",

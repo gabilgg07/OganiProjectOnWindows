@@ -10,7 +10,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>Webarch - Responsive Admin Dashboard</title>
+    <title>Ogani - Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -25,26 +25,99 @@
     <!-- BEGIN CORE CSS FRAMEWORK -->
     <link href="https://webarch.revox.io/3.0/webarch/css/webarch.css" rel="stylesheet" type="text/css" />
     <!-- END CORE CSS FRAMEWORK -->
+    <style>
+        .lang-list {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            display: none;
+        }
+
+            .lang-list.active {
+                display: inline-block;
+            }
+
+            .lang-list ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+                .lang-list ul li a.lang {
+                    display: none;
+                    padding: 5px;
+                    border: 1px solid #8080807a;
+                    border-radius: 5px;
+                    color: #7a7f8c;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+
+                    .lang-list ul li a.lang:hover {
+                        background-color: rgba(0,0,0,0.15);
+                        color: #626262;
+                        box-shadow: 0 0 4px 0px rgb(0 0 0 / 66%);
+                    }
+
+                    .lang-list ul li a.lang.lang-now,
+                    .lang-list ul li a.lang.show {
+                        display: block;
+                    }
+
+                    .lang-list ul li a.lang.active {
+                        display: none !important;
+                    }
+
+
+        .login-container{
+            width: 1170px;
+            margin-top:0;
+        }
+
+        .items-center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 <body class="error-body no-top">
-    <div class="container">
+    <div class="lang-list">
+        <ul>
+            <li>
+                <a class="lang lang-now"></a>
+            </li>
+            <li>
+                <a class="lang" data-lang="az">AZ</a>
+            </li>
+            <li>
+                <a class="lang" data-lang="en">EN</a>
+            </li>
+            <li>
+                <a class="lang" data-lang="ru">RU</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container items-center">
         <div class="row login-container column-seperation">
             <div class="col-md-5 col-md-offset-1">
                 <h2>
-                    Sign in to webarch
+                    @AccountResource.SigninTitle
                 </h2>
+                <br>
                 <p>
-                    Use Facebook, Twitter or your email to sign in.
-                    <br>
-                    <a href="#">Sign up Now!</a> for a webarch account,It's free and always will be..
+                    @AccountResource.SigninBody
                 </p>
                 <br>
-                <button class="btn btn-block btn-info col-md-8" type="button"><span class="pull-left icon-facebook" style="font-style: italic"></span> <span class="bold">Login with Facebook</span></button>
+                <button class="btn btn-block btn-info col-md-8" type="button">
+                    <span class="pull-left icon-facebook" style="font-style: italic"></span>
+                    <span class="bold">@AccountResource.LoginWithFb</span>
+                </button>
                 <button class="btn btn-block btn-success col-md-8" type="button">
                     <span class="pull-left icon-twitter" style="font-style: italic"></span>
-                    <span class="bold">Login with Twitter</span>
+                    <span class="bold">@AccountResource.LoginWithTw</span>
                 </button>
             </div>
             <div class="col-md-5">
@@ -55,14 +128,14 @@
                       name="login-form">
                     <div class="row">
                         <div class="form-group col-md-10">
-                            <label class="form-label" asp-for="UserName">Username</label>
+                            <label class="form-label" asp-for="UserName"></label>
                             <input class="form-control" asp-for="UserName">
                             <span class="text-danger" asp-validation-for="UserName"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-10">
-                            <label class="form-label" asp-for="Password">Password</label> <span class="help"></span>
+                            <label class="form-label" asp-for="Password"></label> <span class="help"></span>
                             <input class="form-control" asp-for="Password">
                             <span class="text-danger" asp-validation-for="Password"></span>
                         </div>
@@ -70,15 +143,14 @@
                     <div class="row">
                         <div class="control-group col-md-10">
                             <div class="checkbox checkbox check-success">
-                                <a href="#">Trouble login in?</a>&nbsp;&nbsp;
-                                <input id="checkbox1" type="checkbox" value="1">
-                                <label for="checkbox1">Keep me reminded</label>
+                                @*<input id="checkbox1" type="checkbox" value="1">
+                                    <label for="checkbox1">Keep me reminded</label>*@
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-10">
-                            <button class="btn btn-primary btn-cons pull-right" type="submit">Login</button>
+                            <button class="btn btn-primary btn-cons pull-right" type="submit">@AccountResource.Login</button>
                         </div>
                     </div>
                 </form>
@@ -96,10 +168,62 @@
     <script src="https://webarch.revox.io/3.0/assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
     <script src="https://webarch.revox.io/3.0/assets/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
     <script src="https://webarch.revox.io/3.0/assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+    <script src="~/lib/jquery-cookie/jquery.cookie.js"></script>
     <!-- END CORE JS DEPENDECENCIES-->
     <!-- BEGIN CORE TEMPLATE JS -->
     <script src="https://webarch.revox.io/3.0/webarch/js/webarch.js" type="text/javascript"></script>
     <script src="https://webarch.revox.io/3.0/assets/js/chat.js" type="text/javascript"></script>
     <!-- END CORE TEMPLATE JS -->
+    <script>let currentHref = window.location.href;
+        const pattern = /.*\/(az|en|ru)(\/.*)?/;
+
+        let result = pattern.exec(currentHref);
+        let cookieLang = $.cookie('lang');
+
+        let siteLangNow = "";
+
+        if (result != null) {
+            siteLangNow = result[1];
+        } else if (cookieLang != null) {
+            siteLangNow = cookieLang;
+        }
+
+        $('.lang-now').text(siteLangNow.toUpperCase());
+        $('.lang-list').addClass('active');
+        $('[data-lang]').each((i, el) => {
+
+            if ($(el).data('lang') == siteLangNow) {
+                $(el).addClass('active');
+            }
+        })
+        $('.lang-list').mouseenter(function (e) {
+            e.preventDefault();
+            $('[data-lang]').each((i, elem) => {
+                $(elem).addClass('show');
+            });
+        });
+
+        $('.lang-list').mouseleave(function (e) {
+            e.preventDefault();
+            $('[data-lang]').each((i, elem) => {
+                $(elem).removeClass('show');
+            });
+        });
+
+
+        $('[data-lang]').each((i, elem) => {
+            $(elem).click(function (e) {
+                e.preventDefault();
+                let currentHref = window.location.href;
+                const pattern = /.*\/(az|en|ru)(\/.*)?/;
+
+                let result = pattern.exec(currentHref);
+                let selectedLang = $(e.currentTarget).data('lang');
+                if (result != null) {
+                    let href = `/${selectedLang}${result[2]}`;
+                    window.location.href = window.location.origin + href;
+                }
+            });
+        });</script>
 </body>
 </html>

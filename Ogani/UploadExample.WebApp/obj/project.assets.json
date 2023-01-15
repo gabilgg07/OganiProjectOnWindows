@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\UploadExample.WebApp\\UploadExample.WebApp.csproj",
+      "projectUniqueName": "D:\\code\\Lessons\\OganiProjectOnWindows\\Ogani\\UploadExample.WebApp\\UploadExample.WebApp.csproj",
       "projectName": "UploadExample.WebApp",
-      "projectPath": "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\UploadExample.WebApp\\UploadExample.WebApp.csproj",
+      "projectPath": "D:\\code\\Lessons\\OganiProjectOnWindows\\Ogani\\UploadExample.WebApp\\UploadExample.WebApp.csproj",
       "packagesPath": "C:\\Users\\GabilGG\\.nuget\\packages\\",
-      "outputPath": "D:\\code\\Lessons\\Ogani project from Mac\\OganiMvcProject\\Ogani\\UploadExample.WebApp\\obj\\",
+      "outputPath": "D:\\code\\Lessons\\OganiProjectOnWindows\\Ogani\\UploadExample.WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\GabilGG\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,7 +63,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
   }

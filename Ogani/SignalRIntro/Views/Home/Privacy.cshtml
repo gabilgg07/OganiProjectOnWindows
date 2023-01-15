@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <form id="login" method="post">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="mailAddr" placeholder="Enter email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Qosul</button>
+                </form>
+
+
+                <div class="d-none chat">
+                    <div class="mb-3">
+                        <label for="emailTo" class="form-label">To: </label>
+                        <input type="email" class="form-control" id="emailTo" placeholder="Enter friend email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message: </label>
+                        <textarea class="form-control" id="message" placeholder="Enter Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gonder</button>
+
+                    <ul class="list-group mt-4 message">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/microsoft-signalr/signalr.js"></script>
+    <script>$(document).ready(function () {
+            
+            $('.chat button').click(function (e) {
+                let to = $('.chat #emailTo').val();
+                let message = $('.chat #message').val();
+
+                if ($.connection == null)
+                    return;
+
+                $.connection.invoke('sendToFriend', to, message);
+            });
+
+            $('#login').submit(function (e) {
+                e.preventDefault();
+
+                let formData = new FormData(e.currentTarget);
+
+                let email = formData.get('mailAddr');
+
+                if (email.length < 1) {
+                    alert('e-mail qeyd edin!');
+                    return;
+                }
+
+                $.connection = new signalR.HubConnectionBuilder()
+                    .withUrl(`/chat?yourKey=${email}`)
+                    .build();
+
+                $.connection.on('messageReceive', function (from, msg) {
+                    let li = $('<li/>', {
+                        class: 'list-group-item',
+                        html: `${from}: ${msg}`
+                    });
+
+                    $('ul.message').append(li);
+                });
+
+
+                $.connection.start().then(function () {
+                    console.log("connected");
+                    $('.chat').removeClass('d-none');
+                    $(e.currentTarget).addClass('d-none');
+                }).catch(function (err) {
+                    return console.error(err.toString());
+                });
+
+            });
+
+        });</script>
+</body>
+</html>

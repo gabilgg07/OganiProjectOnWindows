@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -179,5 +179,8 @@
   </data>
   <data name="UsefulLinks" xml:space="preserve">
     <value>Useful Links</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>item</value>
   </data>
 </root>

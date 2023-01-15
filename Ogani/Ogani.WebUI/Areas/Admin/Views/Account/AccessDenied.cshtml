@@ -4,189 +4,246 @@
     Layout = null;
 }
 
+<link rel="shortcut icon" href="#">
 <style>
-        @@import url('https://fonts.googleapis.com/css?family=Open+Sans|Nova+Mono');
+    @@import url('https://fonts.googleapis.com/css?family=Open+Sans|Nova+Mono');
 
-        :root {
-            --font-header: 'Nova Mono', monospace;
-            --font-text: 'Open Sans', sans-serif;
-            --color-theme: #F1EEDB;
-            --color-bg: #282B24;
-            --animation-sentence: 'You know you\'re supposed to leave, right?';
-            --animation-duration: 10s;
+    :root {
+        --font-header: 'Nova Mono', monospace;
+        --font-text: 'Open Sans', sans-serif;
+        --color-theme: #F1EEDB;
+        --color-bg: #282B24;
+/*        --animation-sentence: 'SupposedToLeave';*/
+        --animation-duration: 20s;
+        @{
+            int duration = 20;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        width: 100%;
+        font-family: var(--font-text);
+        color: var(--color-theme);
+        background: var(--color-bg);
+        overflow: hidden;
+    }
+
+    .container {
+        text-align: center;
+        margin: 1rem 0.5rem 0;
+    }
+
+        .container h1 {
+            font-family: var(--font-header);
+            font-size: calc(4rem + 2vw);
+            text-transform: uppercase;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .container p {
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            font-size: 2rem;
+            margin: 1.5rem 0 3rem;
         }
 
-        body {
-            width: 100%;
-            font-family: var(--font-text);
+    svg.keyhole {
+        height: 82px;
+        width: 82px;
+        opacity: 0;
+        visibility: hidden;
+        /* define an animation for the keyhole, to introduce it
+      paused by default, run with a timeout in JavaScript
+      */
+        animation: showKey 0.5s 0.5s paused ease-out forwards;
+    }
+
+    svg.key {
+        height: 164px;
+        width: 164px;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        /* define an animation for the keyhole, to introduce it
+      paused by default, run with a timeout in JavaScript
+      */
+        animation: showKey 0.5s 0.5s paused ease-out forwards;
+    }
+
+    .ghost {
+        /* border: 1px solid tomato; */
+        position: absolute;
+        bottom: 5px;
+        left: calc(50% - 100px);
+        width: 200px;
+        height: 200px;
+        /* have the ghost move to the right and to the left of the screen, turning to its central position and repeating the animation twice */
+        animation: hoverGhost calc(var(--animation-duration)/2) ease-in-out 2;
+    }
+        /* introduce text through a pseudo element, connected to the animated div */
+        .ghost:before {
+            content: attr(data-before);
             color: var(--color-theme);
-            background: var(--color-bg);
-            overflow: hidden;
-        }
-
-        .container {
+            border-radius: 50%;
+            position: absolute;
+            bottom: 100%;
             text-align: center;
-            margin: 1rem 0.5rem 0;
-        }
-
-            .container h1 {
-                font-family: var(--font-header);
-                font-size: calc(4rem + 2vw);
-                text-transform: uppercase;
-            }
-
-            .container p {
-                text-transform: uppercase;
-                letter-spacing: 0.2rem;
-                font-size: 2rem;
-                margin: 1.5rem 0 3rem;
-            }
-
-        svg.keyhole {
-            height: 82px;
-            width: 82px;
-            opacity: 0;
+            line-height: 2;
+            padding: 1rem;
             visibility: hidden;
-            /* define an animation for the keyhole, to introduce it
-      paused by default, run with a timeout in JavaScript
-      */
-            animation: showKey 0.5s 0.5s paused ease-out forwards;
-        }
-
-        svg.key {
-            height: 164px;
-            width: 164px;
-            position: absolute;
             opacity: 0;
-            visibility: hidden;
-            /* define an animation for the keyhole, to introduce it
-      paused by default, run with a timeout in JavaScript
-      */
-            animation: showKey 0.5s 0.5s paused ease-out forwards;
-        }
-
-        .ghost {
-            /* border: 1px solid tomato; */
-            position: absolute;
-            bottom: 5px;
-            left: calc(50% - 100px);
-            width: 200px;
-            height: 200px;
-            /* have the ghost move to the right and to the left of the screen, turning to its central position and repeating the animation twice */
-            animation: hoverGhost calc(var(--animation-duration)/2) ease-in-out 2;
-        }
-            /* introduce text through a pseudo element, connected to the animated div */
-            .ghost:before {
-                content: var(--animation-sentence);
-                color: var(--color-theme);
-                border-radius: 50%;
-                position: absolute;
-                bottom: 100%;
-                text-align: center;
-                line-height: 2;
-                padding: 1rem;
-                visibility: hidden;
-                opacity: 0;
-                /* have each string of text introduced as the ghost returns from the right edge of the screen, and for the length of time it takes to cover the central portion (a fourth, which becomes an eight as the animation length is half the total duration) */
-                /* the delay for an hypothetical duration of 40s is 7.5s for the first, 27.5s for the second and finally 40s for the last
+            /* have each string of text introduced as the ghost returns from the right edge of the screen, and for the length of time it takes to cover the central portion (a fourth, which becomes an eight as the animation length is half the total duration) */
+            /* the delay for an hypothetical duration of 40s is 7.5s for the first, 27.5s for the second and finally 40s for the last
       in fractions and with a bit of math it boils down to 3/16, 27/40 and 1
       // ! remember to include a slight delay in the animation of the key and keyhole
       */
-                animation: showText calc(var(--animation-duration)/8) calc(var(--animation-duration)*3/16) ease-out forwards, showNewText calc(var(--animation-duration)/8) calc(var(--animation-duration)*27/40) ease-out forwards, showFinalText calc(var(--animation-duration)/8) var(--animation-duration) ease-out forwards;
-            }
+            animation: showText calc(var(--animation-duration)/8) calc(var(--animation-duration)*3/16) ease-out forwards, showNewText calc(var(--animation-duration)/8) calc(var(--animation-duration)*27/40) ease-out forwards, showFinalText calc(var(--animation-duration)/8) var(--animation-duration) ease-out forwards;
+        }
 
-        /* define the keyframe animations
+    /* define the keyframe animations
     - hoverghost to have the ghost move right, left and then back to its default position
     - showKey to introduce into view the key (and keyhole) svg
     - showText, showNewText, showFinalText to show the different strings (the implementation is quite quirky and primed for optimization)
      */
-        @@keyframes hoverGhost {
-            25% {
-                transform: translateX(20vw);
-            }
-
-            75% {
-                transform: translateX(-20vw);
-            }
+    @@keyframes hoverGhost {
+        25% {
+            transform: translateX(20vw);
         }
 
-        @@keyframes showKey {
-            to {
-                opacity: 1;
-                visibility: visible;
-            }
+        75% {
+            transform: translateX(-20vw);
+        }
+    }
+
+    @@keyframes showKey {
+        to {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+
+    /* alter the text changing the value of the custom property, weary of changing its value when the pseudo element is hidden and changing its value in the last keyframe (as the animation gives this value as per the "forwards" value of the fill-mode property)  */
+    @@keyframes showText {
+        2% {
+            opacity: 1;
+            visibility: visible;
         }
 
-
-        /* alter the text changing the value of the custom property, weary of changing its value when the pseudo element is hidden and changing its value in the last keyframe (as the animation gives this value as per the "forwards" value of the fill-mode property)  */
-        @@keyframes showText {
-            2% {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            98% {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            99% {
-                --animation-sentence: 'You know you\'re supposed to leave, right?';
-                opacity: 0;
-                visibility: hidden;
-            }
-
-            100% {
-                --animation-sentence: 'So much to do, so little time...';
-            }
+        98% {
+            opacity: 1;
+            visibility: visible;
         }
 
-        @@keyframes showNewText {
-            2% {
-                --animation-sentence: 'So much to do, so little time...';
-                opacity: 1;
-                visibility: visible;
-            }
-
-            98% {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            99% {
-                --animation-sentence: 'So much to do, so little time...';
-                opacity: 0;
-                visibility: hidden;
-            }
-
-            100% {
-                --animation-sentence: 'Okay, you seem to care about this. Here\'s a key just for you';
-            }
+        99% {
+            opacity: 0;
+            visibility: hidden;
         }
 
-        @@keyframes showFinalText {
-            2% {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            98% {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            100% {
-                opacity: 0;
-                visibility: hidden;
-            }
+        100% {
+/*            --animation-sentence: 'Model.ToDo';*/
         }
+    }
+
+    @@keyframes showNewText {
+        2% {
+/*            --animation-sentence: 'Model.ToDo';*/
+            opacity: 1;
+            visibility: visible;
+        }
+
+        98% {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        99% {
+/*            --animation-sentence: 'Model.ToDo';*/
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        100% {
+/*            --animation-sentence: 'Model.KeyForYou';*/
+        }
+    }
+
+    @@keyframes showFinalText {
+        2% {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        98% {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
 </style>
+
+<style>
+    .lang-list {
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        display: none;
+    }
+
+        .lang-list.active {
+            display: inline-block;
+        }
+
+        .lang-list ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            .lang-list ul li a.lang {
+                display: none;
+                padding: 5px;
+                border: 1px solid #8080807a;
+                border-radius: 5px;
+                color: #7a7f8c;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+
+                .lang-list ul li a.lang:hover {
+                    background-color: rgba(0,0,0,0.15);
+                    color: #626262;
+                    box-shadow: 0 0 4px 0px rgb(0 0 0 / 66%);
+                }
+
+                .lang-list ul li a.lang.lang-now,
+                .lang-list ul li a.lang.show {
+                    display: block;
+                }
+
+                .lang-list ul li a.lang.active {
+                    display: none !important;
+                }
+
+    .d-none {
+        display: none !important;
+    }
+</style>
+
+<span id="supposed_to_leave" class="d-none">@AccountResource.SupposedToLeave</span>
+<span id="yay" class="d-none">@AccountResource.Yay</span>
+<span id="access_granted" class="d-none">@AccountResource.AccessGranted</span>
+<span id="to_do" class="d-none">@AccountResource.ToDo</span>
+<span id="key_for_you" class="d-none">@AccountResource.KeyForYou</span>
 
 <!-- include the svg assets later used in the project -->
 <svg style="display: none">
@@ -284,11 +341,26 @@
         </g>
     </symbol>
 </svg>
-
+<div class="lang-list">
+    <ul>
+        <li>
+            <a class="lang lang-now"></a>
+        </li>
+        <li>
+            <a class="lang" data-lang="az">AZ</a>
+        </li>
+        <li>
+            <a class="lang" data-lang="en">EN</a>
+        </li>
+        <li>
+            <a class="lang" data-lang="ru">RU</a>
+        </li>
+    </ul>
+</div>
 <!-- include in a container a heading, paragraph and svg for the keyhole -->
 <div class="container">
     <h1>403</h1>
-    <p>access not granted</p>
+    <p>@AccountResource.AccessNotGranted</p>
     <svg class="keyhole">
         <use href="#keyhole" />
     </svg>
@@ -310,7 +382,23 @@
 </div>
 
 
-<script>// target the elements in the DOM used in the project
+<script src="~/Admin/assets/plugins/jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="~/lib/jquery-cookie/jquery.cookie.js"></script>
+<script>
+
+    let dur = @duration * 1000;
+
+    $('div.ghost').attr('data-before', $('#supposed_to_leave').text());
+
+    setTimeout(() => {
+        $('div.ghost').attr('data-before', $('#to_do').text());
+    }, dur * 11 / 30);
+
+    setTimeout(() => {
+        $('div.ghost').attr('data-before', $('#key_for_you').text());
+    }, dur * 26 / 30);
+
+    // target the elements in the DOM used in the project
 
     /**
      * svg for the key and keyhole
@@ -327,10 +415,12 @@
 
     // for the length of the timout, consider the --animation-duration custom property and add a small delay
     // retrieve properties on the root element
+
     const root = document.querySelector(":root");
     const rootStyles = getComputedStyle(root);
     // retrieve the animation-duration custom property
     // ! this is specified as "40s", in seconds, so parse the number and includ it in milliseconds
+
     const animationDuration = parseInt(rootStyles.getPropertyValue("--animation-duration")) * 1000;
     let keyTimer = animationDuration * 9 / 8;
 
@@ -380,10 +470,12 @@
         key.parentElement.parentElement.style.cursor = "default";
 
         // change the text of the heading and paragraph elements
-        heading.textContent = '🎉 yay 🎉';
-        paragraph.textContent = 'access granted';
+
+        heading.textContent = `🎉 ${$('#yay').text()} 🎉`;
+        paragraph.textContent = `${$('#access_granted').text()}`;
 
         // remove the svg elements for the key and keywhole from the flow of the document
+
         keyhole.style.display = "none";
         key.style.display = "none";
 
@@ -394,4 +486,59 @@
         setTimeout(() => {
             window.location.href = "/signin.html";
         }, 1500);
-    };</script>
+    };
+
+    /////// ------------------------
+
+    let currentHref = window.location.href;
+    const pattern = /.*\/(az|en|ru)(\/.*)?/;
+
+    let result = pattern.exec(currentHref);
+    let cookieLang = $.cookie('lang');
+
+    let siteLangNow = "";
+
+    if (result != null) {
+        siteLangNow = result[1];
+    } else if (cookieLang != null) {
+        siteLangNow = cookieLang;
+    }
+
+    $('.lang-now').text(siteLangNow.toUpperCase());
+    $('.lang-list').addClass('active');
+    $('[data-lang]').each((i, el) => {
+
+        if ($(el).data('lang') == siteLangNow) {
+            $(el).addClass('active');
+        }
+    })
+    $('.lang-list').mouseenter(function (e) {
+        e.preventDefault();
+        $('[data-lang]').each((i, elem) => {
+            $(elem).addClass('show');
+        });
+    });
+
+    $('.lang-list').mouseleave(function (e) {
+        e.preventDefault();
+        $('[data-lang]').each((i, elem) => {
+            $(elem).removeClass('show');
+        });
+    });
+
+
+    $('[data-lang]').each((i, elem) => {
+        $(elem).click(function (e) {
+            e.preventDefault();
+            let currentHref = window.location.href;
+            const pattern = /.*\/(az|en|ru)(\/.*)?/;
+
+            let result = pattern.exec(currentHref);
+            let selectedLang = $(e.currentTarget).data('lang');
+            if (result != null) {
+                let href = `/${selectedLang}${result[2]}`;
+                window.location.href = window.location.origin + href;
+            }
+        });
+    });
+</script>

@@ -11,10 +11,11 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>Webarch - Responsive Admin Dashboard</title>
+    <title>Ogani - Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="" name="description" />
     <meta content="" name="author" />
+    <link rel="icon" href="~/Admin/assets/img/titleOganiTemp.png" type="image/icon type">
     <link rel="shortcut icon" href="#">
 
     <!-- BEGIN PLUGIN CSS -->
@@ -36,6 +37,50 @@
 
     <link rel="stylesheet" href="~/lib/toastr.js/toastr.min.css" />
     <link rel="stylesheet" href="~/lib/select2/css/select2.css" />
+    <style>
+        .lang-list {
+            float: left;
+            position: relative;
+            top: 12px;
+            margin-right: 20px;
+            display: none;
+        }
+
+            .lang-list.active {
+                display: inline-block;
+            }
+
+            .lang-list ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+                .lang-list ul li a.lang {
+                    display: none;
+                    padding: 5px;
+                    border: 1px solid #8080807a;
+                    border-radius: 5px;
+                    color: #7a7f8c;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+
+                    .lang-list ul li a.lang:hover {
+                        background-color: rgba(0,0,0,0.15);
+                        color: #626262;
+                        box-shadow: 0 0 4px 0px rgb(0 0 0 / 66%);
+                    }
+
+                    .lang-list ul li a.lang.lang-now,
+                    .lang-list ul li a.lang.show {
+                        display: block;
+                    }
+
+                    .lang-list ul li a.lang.active {
+                        display: none !important;
+                    }
+    </style>
     @RenderSection("addcss", required: false)
 </head>
 <!-- END HEAD -->
@@ -169,6 +214,22 @@
                 <!-- END TOP NAVIGATION MENU -->
                 <!-- BEGIN CHAT TOGGLER -->
                 <div class="pull-right">
+                    <div class="lang-list">
+                        <ul>
+                            <li>
+                                <a class="lang lang-now"></a>
+                            </li>
+                            <li>
+                                <a class="lang" data-lang="az">AZ</a>
+                            </li>
+                            <li>
+                                <a class="lang" data-lang="en">EN</a>
+                            </li>
+                            <li>
+                                <a class="lang" data-lang="ru">RU</a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="chat-toggler sm">
                         <div class="profile-pic">
                             <img src="~/Admin/assets/img/profiles/avatar_small2x.jpeg" alt="" width="35" height="35" />
@@ -537,6 +598,7 @@
     <script src="~/Admin/assets/js/icon.js" type="text/javascript"></script>
     <script src="~/lib/toastr.js/toastr.min.js"></script>
     <script src="~/lib/select2/js/select2.js"></script>
+    <script src="~/lib/jquery-cookie/jquery.cookie.js"></script>
 
 
     <script class="removeable">$(document).ready(function () {
@@ -560,6 +622,58 @@
             }
 
             $('select.select2').select2();
+
+            let currentHref = window.location.href;
+            const pattern = /.*\/(az|en|ru)(\/.*)?/;
+
+            let result = pattern.exec(currentHref);
+            let cookieLang = $.cookie('lang');
+
+            let siteLangNow = "";
+
+            if (result != null) {
+                siteLangNow = result[1];
+            } else if (cookieLang != null) {
+                siteLangNow = cookieLang;
+            }
+
+            $('.lang-now').text(siteLangNow.toUpperCase());
+            $('.lang-list').addClass('active');
+            $('[data-lang]').each((i, el) => {
+
+                if ($(el).data('lang') == siteLangNow) {
+                    $(el).addClass('active');
+                }
+            })
+            $('.lang-list').mouseenter(function (e) {
+                e.preventDefault();
+                $('[data-lang]').each((i, elem) => {
+                    $(elem).addClass('show');
+                });
+            });
+
+            $('.lang-list').mouseleave(function (e) {
+                e.preventDefault();
+                $('[data-lang]').each((i, elem) => {
+                    $(elem).removeClass('show');
+                });
+            });
+
+
+            $('[data-lang]').each((i, elem) => {
+                $(elem).click(function (e) {
+                    e.preventDefault();
+                    let currentHref = window.location.href;
+                    const pattern = /.*\/(az|en|ru)(\/.*)?/;
+
+                    let result = pattern.exec(currentHref);
+                    let selectedLang = $(e.currentTarget).data('lang');
+                    if (result != null) {
+                        let href = `/${selectedLang}${result[2]}`;
+                        window.location.href = window.location.origin + href;
+                    }
+                });
+            });
 
         });</script>
 

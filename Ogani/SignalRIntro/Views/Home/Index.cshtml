@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section addcss{
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .wrapper {
+            margin-top: 50px;
+            width: 100%;
+            min-height: 600px;
+            position: relative;
+            border: 1px solid #bbb;
+        }
+
+        .circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: teal;
+            border: 1px solid darkblue;
+            border-radius: 50%;
+        }
+
+        .layout-0 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+}
+<div class="wrapper">
+    <div class="circle"></div>
+    <div class="layout-0"></div>
+</div>
+
+@section Scripts{
+    <script src="~/lib/microsoft-signalr/signalr.js"></script>
+    <script>$(document).ready(function () {
+            $.connection = new signalR.HubConnectionBuilder()
+                .withUrl("/game")
+                .build();
+
+            //connection.on("salamDe", function (msg) {
+            //    alert(msg);
+            //});
+
+            $.connection.on("chgPosition", function (x, y) {
+                $(".circle").css({
+                    top: `${y}px`,
+                    left: `${x}px`,
+                });
+            });
+
+
+            $.connection.start().then(function () {
+                console.log("connected");
+            }).catch(function (err) {
+                return console.error(err.toString());
+            });
+
+            $(".wrapper").mousemove(function (e) {
+                if ($.connection == null)
+                    return;
+                let x = e.offsetX - $(".circle").width() / 2;
+                let y = e.offsetY - $(".circle").height() / 2;
+                $(".circle").css({
+                    top: `${y}px`,
+                    left: `${x}px`,
+                });
+
+                $.connection.invoke('changePosition', x, y);
+            });
+        });</script>
+}

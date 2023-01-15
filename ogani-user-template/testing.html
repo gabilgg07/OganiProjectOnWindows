@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .wrapper {
+        margin-top: 50px;
+        width: 100%;
+        min-height: 600px;
+        position: relative;
+        border: 1px solid #bbb;
+      }
+      .circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background-color: teal;
+        border: 1px solid darkblue;
+        border-radius: 50%;
+      }
+      .layout-0 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+      }
+      .example {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        padding: 10px;
+        border: 1px solid brown;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="circle"></div>
+        <div class="layout-0"></div>
+      </div>
+    </div>
+    <div class="example"></div>
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".wrapper").mousemove(function (e) {
+          if (!$(e.target).hasClass("circle")) {
+            $(".circle").css({
+              top: `${e.offsetY - $(".circle").height() / 2}px`,
+              left: `${e.offsetX - $(".circle").width() / 2}px`,
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

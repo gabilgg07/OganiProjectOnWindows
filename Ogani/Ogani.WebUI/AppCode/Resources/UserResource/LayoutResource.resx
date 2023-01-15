@@ -180,4 +180,7 @@
   <data name="UsefulLinks" xml:space="preserve">
     <value>Faydalı Linklər</value>
   </data>
+  <data name="Item" xml:space="preserve">
+    <value>toplanan</value>
+  </data>
 </root>

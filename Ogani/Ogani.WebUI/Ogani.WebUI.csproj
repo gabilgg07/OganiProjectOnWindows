@@ -52,6 +52,7 @@
     <None Remove="AppCode\Middlewares\" />
     <None Remove="AppCode\Resources\" />
     <None Remove="AppCode\Resources\UserResource\" />
+    <None Remove="AppCode\Resources\AdminResource\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -98,6 +99,7 @@
     <Folder Include="Areas\Admin\Models\ViewModel\" />
     <Folder Include="Areas\Admin\Views\Account\" />
     <Folder Include="AppCode\Middlewares\" />
+    <Folder Include="AppCode\Resources\AdminResource\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
@@ -139,10 +141,56 @@
       <LastGenOutput>LayoutResource.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Resource</CustomToolNamespace>
     </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\BlogResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BlogResource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\BlogResource.en.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\BlogResource.ru.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\CrudResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CrudResource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\CrudResource.en.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\CrudResource.ru.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\AccountResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AccountResource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Update="AppCode\Resources\AdminResource\AccountResource.ru.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AppCode\Resources\AdminResource\AccountResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AccountResource.resx</DependentUpon>
+    </Compile>
     <Compile Update="AppCode\Resources\UserResource\LayoutResource.Designer.cs">
       <DependentUpon>LayoutResource.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <CustomToolNamespace>Resource</CustomToolNamespace>
+    </Compile>
+    <Compile Update="AppCode\Resources\AdminResource\BlogResource.Designer.cs">
+      <DependentUpon>BlogResource.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="AppCode\Resources\AdminResource\CrudResource.Designer.cs">
+      <DependentUpon>CrudResource.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>

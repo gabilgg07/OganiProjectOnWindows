@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Resource;
 
 namespace Ogani.WebUI.Areas.Admin.Models.ViewModel
 {
@@ -7,11 +8,13 @@ namespace Ogani.WebUI.Areas.Admin.Models.ViewModel
 	{
 		[Required]
 		[MinLength(3)]
-		public string UserName { get; set; }
+        [Display(ResourceType = typeof(AccountResource), Name = "UserName")]
+        public string UserName { get; set; }
 
 		[Required]
-		//[DataType(DataType.Password)]
-		public string Password { get; set; }
+        [Display(ResourceType = typeof(AccountResource), Name = "Password")]
+        //[DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }
 

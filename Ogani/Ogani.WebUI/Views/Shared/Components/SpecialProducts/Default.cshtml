@@ -1,6 +1,11 @@
 ﻿@model IEnumerable<Product>
 @{
     int count = 0;
+    int length = Model.Count();
+    if (length>3)
+    {
+        length = 3;
+    }
     Product p;
 }
 
@@ -8,13 +13,13 @@
 {
     <h4>@ViewBag.CardTitle</h4>
     <div class="latest-product-slider owl-carousel owl-loaded owl-drag">
-        @for (int i = 0; i < 3; i++)
+        @for (int i = 0; i < length; i++)
         {
             <div class="latest-prdouct-slider-item">
-                @for (int j = 0; j < 3; j++)
+                @for (int j = 0; j < length; j++)
                 {
                     {
-                        p = Model.ElementAt(count++);
+                        p = Model?.ElementAt(count++);
                     }
                     <a asp-controller="shop" asp-action="details" asp-route-id="@p.Id" class="latest-product-item">
                         <div class="latest-product-item-pic">
