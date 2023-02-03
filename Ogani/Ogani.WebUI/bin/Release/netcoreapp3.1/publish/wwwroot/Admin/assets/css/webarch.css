@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');*/
 /*------------------------------------------------------------------
 Webarch v2.8
 Theme : Default
@@ -36,24 +36,24 @@ Generated From LESS
 [1. Layouts]
 */
 :-moz-placeholder {
-    color: '#333843';
+    color: #333843;
 }
 
 ::-moz-placeholder {
-    color: '#333843';
+    color: #333843;
     opacity: 0.5;
 }
 
 :-ms-input-placeholder {
-    color: '#333843';
+    color: #333843;
 }
 
 ::-webkit-input-placeholder {
-    color: '#333843';
+    color: #333843;
 }
 
 .placeholder {
-    color: '#333843';
+    color: #333843;
 }
 
 html {
@@ -395,7 +395,7 @@ body {
     .header .header-quick-nav {
         padding-right: 10px;
         height: 60px;
-        -webkit-transition-duration: 1;
+        -webkit-transition-duration: 1s;
         -moz-transition-duration: 1s;
         transition-duration: 1s;
         transition-timing-function: ease-in-out;
@@ -1986,7 +1986,7 @@ body {
 }
 
 .status-icon {
-    background: url('../img/icon/status.png') no-repeat;
+    background: url('../img/icon/status2x.png') no-repeat;
     position: relative;
     display: inline-block;
     margin-right: 10px;
@@ -2918,7 +2918,7 @@ span.iconset {
 }
 
 .iconset {
-    background: url("../img/icon/top-tray.png") no-repeat;
+    background: url("../img/icon/top-trayx2.png") no-repeat;
     position: relative;
     top: 1px;
 }
@@ -3678,7 +3678,7 @@ span.iconset {
 }
 
 .b-a {
-    border-width: 1px solid;
+    border-width: 1px;
 }
 
 .b-transparent {
@@ -8646,7 +8646,7 @@ code {
 .green .slider-selection {
     background-image: none !important;
     background-color: #0aa699 !important;
-    cursor: point2;
+    cursor: pointer;
 }
 /*------------------------------------------------------------------
 [13. Tables]
@@ -11381,7 +11381,7 @@ body.rtl {
 
     .error-wrapper {
         margin-bottom: 0px;
-        padding: auto;
+        /*padding: auto;*/
     }
 
     .widget-item.narrow-margin {
@@ -11639,7 +11639,7 @@ body.rtl {
     }
 
     .no-margin-grid .row-fluid [class*="span"] {
-        width: 100% !impotant;
+        width: 100% !important;
         margin: 0px;
         margin-bottom: 10px;
     }
@@ -12057,15 +12057,18 @@ body.rtl {
     .select2-container .select2-choice .select2-arrow b {
         background-image: none;
         background-repeat: no-repeat !important;
-        background-size: none !important;
+        background-size:unset !important;
     }
 
     .select2-search input {
-        background-position: none !important;
+        background-position: unset !important;
     }
 }
 
 @media (min-width: 980px) {
+    .header-seperation .lang-list{
+        display: none !important;
+    }
     body.open-menu-right .page-content {
         position: relative;
         -webkit-transform: translateX(-260px);
@@ -12311,6 +12314,16 @@ body.rtl {
 
 .mb-0 {
     margin-bottom: 0 !important;
+}
+
+@media only screen and (min-width: 500px) {
+    .mb-min-500-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .min-w-min-500-0 {
+        min-width: 0 !important;
+    }
 }
 
 .vertical-middle {

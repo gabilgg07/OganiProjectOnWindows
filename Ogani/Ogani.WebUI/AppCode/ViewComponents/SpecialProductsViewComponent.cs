@@ -1,13 +1,12 @@
-﻿using System;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Ogani.WebUI.AppCode.Types;
 using Ogani.WebUI.Models.DataContext;
+using System.Linq;
 
 namespace Ogani.WebUI.AppCode.ViewComponents
 {
-	public class SpecialProductsViewComponent : ViewComponent
+    public class SpecialProductsViewComponent : ViewComponent
     {
 		readonly OganiDbContext db;
 
@@ -19,7 +18,7 @@ namespace Ogani.WebUI.AppCode.ViewComponents
 		public IViewComponentResult Invoke(string caption, ProductReportType reportType)
 		{
 			ViewBag.CardTitle = caption;
-            var query = db.Products
+            var query = db.Products.Where(p => p.DeletedDate == null)
                         .Include(p => p.Images)
                 .AsQueryable();
 

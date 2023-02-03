@@ -56,9 +56,7 @@ using Resource;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd", @"/Views/Shop/ShoppingCard.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"def64b94be70546facb495209f61e9d90e28660e", @"/Views/_ViewImports.cshtml")]
-    #nullable restore
     public class Views_Shop_ShoppingCard : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<BasketItem>>
-    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -117,7 +115,7 @@ using Resource;
                     <h2>Shopping Cart</h2>
                     <div class=""breadcrumb-option"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd8201", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd8155", async() => {
                 WriteLiteral("Home");
             }
             );
@@ -187,7 +185,7 @@ using Resource;
 #line hidden
 #nullable disable
             WriteLiteral("\">\r\n                                        <td class=\"shoping-cart-item\">\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd11420", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd11374", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -293,7 +291,7 @@ WriteAttributeValue("", 2560, item.Count, 2560, 11, false);
             <div class=""col-lg-12"">
                 <div class=""shoping-cart-btns"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd16459", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd16413", async() => {
                 WriteLiteral("CONTINUE SHOPPING");
             }
             );
@@ -323,7 +321,7 @@ WriteAttributeValue("", 2560, item.Count, 2560, 11, false);
                     <div class=""shoping-discount"">
                         <h5>Discount Codes</h5>
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd18381", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd18335", async() => {
                 WriteLiteral("\r\n                            <input type=\"text\" placeholder=\"Enter your coupon code\">\r\n                            <button type=\"submit\" class=\"site-btn\">APPLY COUPON</button>\r\n                        ");
             }
             );
@@ -351,7 +349,7 @@ WriteAttributeValue("", 2560, item.Count, 2560, 11, false);
                         <li>Total <span id=""total""></span></li>
                     </ul>
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd20321", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d745ef2087d0a18d4a7dc0fc5a5c028b82abbcd20275", async() => {
                 WriteLiteral("PROCEED TO CHECKOUT");
             }
             );
@@ -530,26 +528,16 @@ WriteAttributeValue("", 2560, item.Count, 2560, 11, false);
             );
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<BasketItem>> Html { get; private set; } = default!;
-        #nullable disable
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<IEnumerable<BasketItem>> Html { get; private set; }
     }
 }
 #pragma warning restore 1591

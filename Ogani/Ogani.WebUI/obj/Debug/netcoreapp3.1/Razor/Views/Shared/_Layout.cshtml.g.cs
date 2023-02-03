@@ -56,9 +56,7 @@ using Resource;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1cf81f881fac027ecaf54615e2de2de61e2e5d3b", @"/Views/Shared/_Layout.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"def64b94be70546facb495209f61e9d90e28660e", @"/Views/_ViewImports.cshtml")]
-    #nullable restore
     public class Views_Shared__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
-    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -120,7 +118,7 @@ using Resource;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html lang=\"az\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b10722", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b10676", async() => {
                 WriteLiteral("\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"description\"");
                 BeginWriteAttribute("content", " content=\"", 286, "\"", 332, 4);
 #nullable restore
@@ -165,7 +163,7 @@ WriteAttributeValue("", 371, appInfo.Title, 371, 14, false);
 #line hidden
 #nullable disable
                 WriteLiteral("</title>\r\n    <link rel=\"shortcut icon\" href=\"#\">\r\n\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("base", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b13129", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("base", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b13083", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -214,9 +212,9 @@ Write(RenderSection("addcss", required: false));
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b16262", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b16216", async() => {
                 WriteLiteral("\r\n\r\n    <div id=\"preloder\">\r\n        <div class=\"loader\"></div>\r\n    </div>\r\n\r\n    <div class=\"humberger-menu-overlay\"></div>\r\n    <div class=\"humberger-menu-wrapper\">\r\n        <div class=\"humberger-menu-logo\">\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b16769", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b16723", async() => {
                     WriteLiteral("<img src=\"assets/img/logo.png\"");
                     BeginWriteAttribute("alt", " alt=\"", 2107, "\"", 2113, 0);
                     EndWriteAttribute();
@@ -237,7 +235,7 @@ Write(RenderSection("addcss", required: false));
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n        </div>\r\n        <div class=\"humberger-menu-cart\">\r\n            <ul>\r\n                <li><a href=\"#\"><i class=\"fa fa-heart\"></i> <span>1</span></a></li>\r\n                <li>\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b18612", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b18566", async() => {
                     WriteLiteral("\r\n                        <i class=\"fa fa-shopping-bag\"></i>\r\n                        <span class=\"basketCount\"></span>\r\n                    ");
                 }
                 );
@@ -287,7 +285,7 @@ Write(RenderSection("addcss", required: false));
 #line hidden
 #nullable disable
                 WriteLiteral("</a>\r\n            </div>\r\n        </div>\r\n        <nav class=\"humberger-menu-nav mobile-menu\">\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b21888", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b21842", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -302,7 +300,7 @@ Write(RenderSection("addcss", required: false));
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n        </nav>\r\n        <div id=\"mobile-menu-wrap\"></div>\r\n        <div class=\"header-top-right-social\">\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b23193", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b23147", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -328,7 +326,7 @@ Write(RenderSection("addcss", required: false));
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b25067", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b25021", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -354,7 +352,7 @@ Write(RenderSection("addcss", required: false));
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b26942", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b26896", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -380,7 +378,7 @@ Write(RenderSection("addcss", required: false));
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b28815", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b28769", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -406,7 +404,7 @@ Write(RenderSection("addcss", required: false));
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b30691", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b30645", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -510,7 +508,7 @@ WriteAttributeValue("", 4894, appInfo.Email, 4894, 14, false);
                         <div class=""header-top-right"">
                             <div class=""header-top-right-social"">
                                 ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b35966", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b35920", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -536,7 +534,7 @@ WriteAttributeValue("", 4894, appInfo.Email, 4894, 14, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b37881", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b37835", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -562,7 +560,7 @@ WriteAttributeValue("", 4894, appInfo.Email, 4894, 14, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b39797", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b39751", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -588,7 +586,7 @@ WriteAttributeValue("", 4894, appInfo.Email, 4894, 14, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b41711", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b41665", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -614,7 +612,7 @@ WriteAttributeValue("", 4894, appInfo.Email, 4894, 14, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b43628", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b43582", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -672,7 +670,7 @@ WriteAttributeValue("", 4894, appInfo.Email, 4894, 14, false);
                 <div class=""col-lg-3"">
                     <div class=""header-logo"">
                         ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b47045", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b46999", async() => {
                     WriteLiteral("<img src=\"assets/img/logo.png\"");
                     BeginWriteAttribute("alt", " alt=\"", 7201, "\"", 7207, 0);
                     EndWriteAttribute();
@@ -693,7 +691,7 @@ WriteAttributeValue("", 4894, appInfo.Email, 4894, 14, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-lg-6\">\r\n                    <nav class=\"header-menu\">\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b48843", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b48797", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -716,7 +714,7 @@ WriteAttributeValue("", 4894, appInfo.Email, 4894, 14, false);
                             <li><a href=""#""><i class=""fa fa-heart""></i> <span>1</span></a></li>
                             <li>
                                 ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b50359", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b50313", async() => {
                     WriteLiteral("\r\n                                    <i class=\"fa fa-shopping-bag\"></i>\r\n                                    <span class=\"basketCount\"></span>\r\n                                ");
                 }
                 );
@@ -789,7 +787,7 @@ WriteAttributeValue(" ", 8406, isHomeIndex?"":"hero-normal", 8407, 31, false);
 #line hidden
 #nullable disable
                 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-lg-9\">\r\n                    <div class=\"hero-search\">\r\n                        <div class=\"hero-search-form\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b54506", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b54460", async() => {
                     WriteLiteral("\r\n                                <div class=\"hero-search-categories\">\r\n                                    ");
 #nullable restore
 #line 198 "D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\Views\Shared\_Layout.cshtml"
@@ -896,7 +894,7 @@ Write(RenderBody());
                     <div class=""footer-about"">
                         <div class=""footer-about-logo"">
                             ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b59962", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b59916", async() => {
                     WriteLiteral("<img src=\"assets/img/logo.png\"");
                     BeginWriteAttribute("alt", " alt=\"", 11207, "\"", 11213, 0);
                     EndWriteAttribute();
@@ -1020,7 +1018,7 @@ WriteAttributeValue("", 11577, appInfo.Email, 11577, 14, false);
 #line hidden
 #nullable disable
                 WriteLiteral("</h6>\r\n                        <p>Get E-mail updates about our latest shop and special offers.</p>\r\n                        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b66183", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b66137", async() => {
                     WriteLiteral("\r\n                            <input type=\"text\"");
                     BeginWriteAttribute("placeholder", " placeholder=\"", 13346, "\"", 13390, 1);
 #nullable restore
@@ -1061,7 +1059,7 @@ WriteAttributeValue("", 13360, LayoutResource.PlaceholdEmail, 13360, 30, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                        <div class=\"footer-widget-social\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b69196", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b69150", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -1087,7 +1085,7 @@ WriteAttributeValue("", 13360, LayoutResource.PlaceholdEmail, 13360, 30, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b71103", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b71057", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -1113,7 +1111,7 @@ WriteAttributeValue("", 13360, LayoutResource.PlaceholdEmail, 13360, 30, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b73011", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b72965", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -1139,7 +1137,7 @@ WriteAttributeValue("", 13360, LayoutResource.PlaceholdEmail, 13360, 30, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b74917", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b74871", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -1165,7 +1163,7 @@ WriteAttributeValue("", 13360, LayoutResource.PlaceholdEmail, 13360, 30, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b76826", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("social-network", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b76780", async() => {
                 }
                 );
                 __Ogani_WebUI_AppCode_TagHelpers_SosialNetworkHelper = CreateTagHelper<global::Ogani.WebUI.AppCode.TagHelpers.SosialNetworkHelper>();
@@ -1231,7 +1229,7 @@ WriteAttributeValue("", 13360, LayoutResource.PlaceholdEmail, 13360, 30, false);
     <script src=""assets/js/owl.carousel.min.js"" type=""text/javascript""></script>
     <script src=""lib/toastr.js/toastr.min.js""></script>
     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b80627", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cf81f881fac027ecaf54615e2de2de61e2e5d3b80581", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1429,30 +1427,18 @@ Write(RenderSection("addjs", required: false));
             WriteLiteral("\r\n</html>\r\n\r\n\r\n\r\n\r\n\r\n\r\n");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public OganiDbContext db { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public OganiDbContext db { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; } = default!;
-        #nullable disable
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; }
     }
 }
 #pragma warning restore 1591

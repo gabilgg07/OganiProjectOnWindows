@@ -533,7 +533,6 @@ D:\code\Lessons\Ogani project from Mac\OganiMvcProject\Ogani\Ogani.WebUI\obj\Deb
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\bin\Debug\netcoreapp3.1\appsettings.json
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\bin\Debug\netcoreapp3.1\libman.json
-D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\bin\Debug\netcoreapp3.1\Ogani.WebUI.StaticWebAssets.xml
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\bin\Debug\netcoreapp3.1\Ogani.WebUI.exe
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\bin\Debug\netcoreapp3.1\Ogani.WebUI.deps.json
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\bin\Debug\netcoreapp3.1\Ogani.WebUI.runtimeconfig.json
@@ -719,16 +718,9 @@ D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\Ogani.WebUI.MvcApplicationPartsAssemblyInfo.cache
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\Ogani.WebUI.RazorAssemblyInfo.cache
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\Ogani.WebUI.RazorAssemblyInfo.cs
-D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\en\Ogani.WebUI.resources.cs
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\en\Ogani.WebUI.resources.dll
-D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\ru\Ogani.WebUI.resources.cs
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\ru\Ogani.WebUI.resources.dll
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\staticwebassets\Ogani.WebUI.StaticWebAssets.Manifest.cache
-D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\staticwebassets\Ogani.WebUI.StaticWebAssets.Pack.cache
-D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.Ogani.WebUI.Microsoft.AspNetCore.StaticWebAssets.props
-D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.Ogani.WebUI.props
-D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.Ogani.WebUI.props
-D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.Ogani.WebUI.props
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\Ogani.WebUI.TagHelpers.input.cache
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\Ogani.WebUI.TagHelpers.output.cache
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\Ogani.WebUI.RazorCoreGenerate.cache
@@ -799,3 +791,5 @@ D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\Ogani.WebUI.dll
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\Ogani.WebUI.pdb
 D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\Ogani.WebUI.genruntimeconfig.cache
+D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\staticwebassets\Ogani.WebUI.StaticWebAssets.xml
+D:\code\Lessons\OganiProjectOnWindows\Ogani\Ogani.WebUI\obj\Debug\netcoreapp3.1\scopedcss\bundle\Ogani.WebUI.styles.css

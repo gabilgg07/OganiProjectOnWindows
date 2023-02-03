@@ -70,9 +70,7 @@ using Resource;
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"423169b566b4d1863624a238b1ccd60fe7b3a1e3", @"/Areas/Admin/Views/Shared/_SideBar.cshtml")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b1f36008a3b12ac277cca4fee114ea73c73c21c5", @"/Areas/Admin/Views/_ViewImports.cshtml")]
-    #nullable restore
     public class Areas_Admin_Views_Shared__SideBar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
-    #nullable disable
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "home", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -123,7 +121,7 @@ using Resource;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n\r\n<p class=\"menu-title sm\">BROWSE <span class=\"pull-right\"><a href=\"javascript:;\"><i class=\"material-icons\">refresh</i></a></span></p>\r\n<ul>\r\n    <li class=\"start \">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e39865", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e39819", async() => {
                 WriteLiteral("<i class=\"material-icons\">home</i> <span class=\"title\">Dashboard</span> <span class=\"selected\"></span> <span class=\"arrow \"></span> ");
             }
             );
@@ -144,7 +142,7 @@ using Resource;
             BeginWriteAttribute("class", " class=\"", 447, "\"", 455, 0);
             EndWriteAttribute();
             WriteLiteral("> ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e311552", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e311506", async() => {
                 WriteLiteral(" Dashboard v2 <span class=\" label label-info pull-right m-r-30\">NEW</span>");
             }
             );
@@ -162,7 +160,7 @@ using Resource;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n        </ul>\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e313039", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e312993", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 694, "\"", 762, 3);
                 WriteAttributeValue("", 702, "fa", 702, 2, true);
@@ -192,7 +190,7 @@ WriteAttributeValue("", 714, title.ToLower().Contains("user")?"-open-o":"", 714,
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e315080", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e315034", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 920, "\"", 988, 3);
                 WriteAttributeValue("", 928, "fa", 928, 2, true);
@@ -222,7 +220,7 @@ WriteAttributeValue("", 940, title.ToLower().Contains("role")?"-open-o":"", 940,
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e317121", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e317075", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 1151, "\"", 1233, 3);
                 WriteAttributeValue("", 1159, "fa", 1159, 2, true);
@@ -252,7 +250,7 @@ WriteAttributeValue("", 1171, title.ToLower().Contains("product-categories")?"-o
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e319197", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e319151", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 1404, "\"", 1473, 3);
                 WriteAttributeValue("", 1412, "fa", 1412, 2, true);
@@ -282,7 +280,7 @@ WriteAttributeValue("", 1424, title.ToLower().Contains("units")?"-open-o":"", 14
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e321255", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e321209", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 1642, "\"", 1714, 3);
                 WriteAttributeValue("", 1650, "fa", 1650, 2, true);
@@ -312,7 +310,7 @@ WriteAttributeValue("", 1662, title.ToLower().Contains("products")?"-open-o":"",
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e323311", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e323265", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 1884, "\"", 1963, 3);
                 WriteAttributeValue("", 1892, "fa", 1892, 2, true);
@@ -342,7 +340,7 @@ WriteAttributeValue("", 1904, title.ToLower().Contains("blog-categories")?"-open
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e325381", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e325335", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 2133, "\"", 2204, 3);
                 WriteAttributeValue("", 2141, "fa", 2141, 2, true);
@@ -372,7 +370,7 @@ WriteAttributeValue("", 2153, title.ToLower().Contains("authors")?"-open-o":"", 
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e327435", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e327389", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 2364, "\"", 2433, 3);
                 WriteAttributeValue("", 2372, "fa", 2372, 2, true);
@@ -402,7 +400,7 @@ WriteAttributeValue("", 2384, title.ToLower().Contains("blogs")?"-open-o":"", 23
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e329487", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e329441", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 2594, "\"", 2667, 3);
                 WriteAttributeValue("", 2602, "fa", 2602, 2, true);
@@ -432,7 +430,7 @@ WriteAttributeValue("", 2614, title.ToLower().Contains("blog-tags")?"-open-o":""
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e331547", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e331501", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 2829, "\"", 2898, 3);
                 WriteAttributeValue("", 2837, "fa", 2837, 2, true);
@@ -462,7 +460,7 @@ WriteAttributeValue("", 2849, title.ToLower().Contains("users")?"-open-o":"", 28
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e333684", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e333638", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 3140, "\"", 3212, 3);
                 WriteAttributeValue("", 3148, "fa", 3148, 2, true);
@@ -492,7 +490,7 @@ WriteAttributeValue("", 3160, title.ToLower().Contains("comments")?"-open-o":"",
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e335827", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e335781", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 3461, "\"", 3538, 3);
                 WriteAttributeValue("", 3469, "fa", 3469, 2, true);
@@ -522,7 +520,7 @@ WriteAttributeValue("", 3481, title.ToLower().Contains("contact-posts")?"-open-o
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e337980", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "423169b566b4d1863624a238b1ccd60fe7b3a1e337934", async() => {
                 WriteLiteral("\r\n            <i");
                 BeginWriteAttribute("class", " class=\"", 3790, "\"", 3864, 3);
                 WriteAttributeValue("", 3798, "fa", 3798, 2, true);
@@ -764,26 +762,16 @@ WriteAttributeValue("", 3810, title.ToLower().Contains("subscribes")?"-open-o":"
 ");
         }
         #pragma warning restore 1998
-        #nullable restore
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IUrlHelper Url { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.IViewComponentHelper Component { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; } = default!;
-        #nullable disable
-        #nullable restore
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IJsonHelper Json { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
-        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; } = default!;
-        #nullable disable
+        public global::Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> Html { get; private set; }
     }
 }
 #pragma warning restore 1591

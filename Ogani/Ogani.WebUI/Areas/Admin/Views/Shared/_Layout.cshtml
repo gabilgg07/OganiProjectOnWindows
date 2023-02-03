@@ -64,11 +64,12 @@
                     color: #7a7f8c;
                     cursor: pointer;
                     transition: all 0.3s;
+                    background-color: #e5e9ec;
                 }
 
                     .lang-list ul li a.lang:hover {
-                        background-color: rgba(0,0,0,0.15);
-                        color: #626262;
+                        background-color: rgb(0 0 0 / 82%);
+                        color: #e7dbdb;
                         box-shadow: 0 0 4px 0px rgb(0 0 0 / 66%);
                     }
 
@@ -103,6 +104,22 @@
                     <img src="~/Admin/assets/img/logo2x.png" class="logo" alt="" width="106" height="21" />
                 </a>
                 <!-- END LOGO -->
+                <div class="lang-list pull-right active">
+                    <ul>
+                        <li>
+                            <a class="lang lang-now">AZ</a>
+                        </li>
+                        <li>
+                            <a class="lang" data-lang="az">AZ</a>
+                        </li>
+                        <li>
+                            <a class="lang" data-lang="en">EN</a>
+                        </li>
+                        <li>
+                            <a class="lang" data-lang="ru">RU</a>
+                        </li>
+                    </ul>
+                </div>
                 <ul class="nav pull-right notifcation-center">
                     <li class="dropdown hidden-xs hidden-sm">
                         <a asp-controller="home" asp-action="index" class="dropdown-toggle active" data-toggle="">

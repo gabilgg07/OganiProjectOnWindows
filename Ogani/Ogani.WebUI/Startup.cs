@@ -43,6 +43,7 @@ namespace Ogani.WebUI
                 cfg.UseSqlServer(Configuration.GetConnectionString("cString"));
                 //cfg.UseSqlServer(Configuration.GetConnectionString("cStringMac"));
                 //cfg.UseSqlServer(Configuration.GetConnectionString("cStringWindows"));
+                //cfg.UseSqlServer(Configuration.GetConnectionString("cStringWindowsOganiAz"));
                 //cfg.UseMySql(Configuration.GetConnectionString("cStringMySql"));
             });
 
